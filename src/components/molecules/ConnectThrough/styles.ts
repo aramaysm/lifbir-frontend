@@ -13,12 +13,12 @@ export const stylesButton = {
 export const stylesIcon = {
     fontSize: 40,
     color:"secondary.main",
-    boxShadow: "0 5px 10px 2px rgb(200 10 105 / 40%)",
+    boxShadow: "0 5px 10px 2px rgb(200 10 105 / 30%)",
     borderRadius:"100px",
     padding: "3px",
      "&:hover": {
         backgroundColor: "secondary.main",
-        color:"white"
+        color:"white",
     },
    
 };

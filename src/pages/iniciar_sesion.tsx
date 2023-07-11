@@ -2,12 +2,12 @@ import React from "react";
 import Head from "next/head";
 
 import { CountryType } from "@models";
-import  Profile_Layout  from "@components/layouts/Layout/Account/profile";
-import profilePhoto from "@public/images/account/boy_small.png";
+import image from "@public/images/account/playa.jpg";
 import { GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import { dehydrate, QueryClient } from "react-query";
-import Account_Layout from "@components/layouts/Layout/Account";
+import Login_Layout from "@components/layouts/Layout/Login";
+
 
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 
-interface ParamsAccount {
+interface ParamsLogin {
     user: {
         username: string,
         name:string;
@@ -37,17 +37,17 @@ interface ParamsAccount {
 }
 
 
-export default function Account({ user }: ParamsAccount) {
+export default function Login({ user }: ParamsLogin) {
     
   
     return (
         <>
             <Head>
-                <title>LIFVIR</title>
+                <title>LIFBIR</title>
             </Head>
-            <Account_Layout 
+            <Login_Layout 
                 user={user}               
-                imgProfile={profilePhoto}
+                image={image}
                 
             />
         </>

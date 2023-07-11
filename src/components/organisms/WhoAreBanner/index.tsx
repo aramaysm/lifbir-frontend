@@ -25,7 +25,7 @@ import {
    stylesTitlePrimary, 
    stylesTitleSecondary,
    styleHR,
-   styleCardContent
+   styleCardContent,
 } from "@components/organisms/WhoAreBanner/styles";
 
 interface Props {

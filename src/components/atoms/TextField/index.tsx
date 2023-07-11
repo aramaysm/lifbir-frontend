@@ -27,6 +27,7 @@ interface IProps {
     size?: TextFieldSizeEnum;
     typeText?: TypeText;
     name?: string;
+    color:string;
 }
 
 const Index: FC<IProps> = ({
@@ -42,6 +43,7 @@ const Index: FC<IProps> = ({
     size,
     typeText,
     name,
+    color,
 }) => {
     const inputComponentProps: MuiInputProps = InputProps
         ? { ...InputProps }
@@ -72,6 +74,7 @@ const Index: FC<IProps> = ({
             size={size}
             type={typeText}
             name={name}
+            color={color}
         />
     );
 };

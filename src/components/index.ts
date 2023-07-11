@@ -14,7 +14,7 @@ import Stack from "@components/atoms/Stack";
 import TextField from "@components/atoms/TextField";
 import Tooltip from "@components/atoms/Tooltip";
 import Typography from "@components/atoms/Typography";
-
+import CheckBox from "@components/atoms/CheckBox";
 import CardActions from "@components/molecules/Card/CardActions";
 import CardContent from "@components/molecules/Card/CardContent";
 import Card from "@components/molecules/Card";
@@ -51,6 +51,7 @@ export {
     AutoComplete,
     Box,
     Button,
+    CheckBox,
     IconButton,
     Container,
     Divider,

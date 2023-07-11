@@ -6,8 +6,12 @@ import { object, string } from "yup";
 import {
     Box,
     Button,
+    CheckBox,
+    ConnectThrough,
     FormHelperText,
+    Grid,
     IconButton,
+    Image,
     Stack,
     TextField,
     Typography,
@@ -18,6 +22,8 @@ import {
     ColorEnum,
     DirectionEnum,
     EdgePosEnum,
+    ImageLayoutEnum,
+    ImageObjectFitEnum,
     PositionEnum,
     TextFieldSizeEnum,
     TextFieldVariantEnum,
@@ -29,6 +35,9 @@ import {
     stylesTypography,
 } from "@components/organisms/SignInForm/styles";
 import { SignInInitialValues } from "@components/organisms/SignInForm/config";
+import { Divider } from "@mui/material";
+import imageLogo from "@public/images/LOGO_UNIDO_pink.svg";
+
 
 interface IProps {
     handleToggleSignIn: () => void;
@@ -47,9 +56,12 @@ const signInValidationSchema = object().shape({
 const Index: FC<IProps> = ({ handleToggleSignIn }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [changePassOpen, setChangePassOpen] = useState(false);
+    const [checkedRemember, setCheckedRemember ] = useState(true);
     const [serverErrors, setServerErrors] = useState<{
         [p: string]: ArrayLike<unknown>;
     } | null>(null);
+
+
 
     const showServerHandlerErrors = (
         error: { [p: string]: ArrayLike<unknown> } | null
@@ -75,8 +87,8 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
             clickHandler={passwordToggleHandler}
             edge={EdgePosEnum.END}
         >
-            {showPassword ? <VisibilityOff sx={{color:"secondary.main"}} /> :
-             <Visibility sx={{color:"secondary.main"}} />}
+            {showPassword ? <VisibilityOff sx={{color:"hover.main"}} /> :
+             <Visibility sx={{color:"hover.main"}} />}
         </IconButton>
     );
 
@@ -111,13 +123,36 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
             }}
         >
             {({ isSubmitting }) => (
-                <Form>
-                    <Box sx={{ padding: 2 }}>
+                <Form style={{ width:"100%"}}>
+                    <Box sx={{ padding: 3}}>
                         {serverErrors && (
                             <FormHelperText error focused style={{ maxWidth: 280, mb: 3 }}>
                                 <>{serverErrors}</>
                             </FormHelperText>
                         )}
+                        {/*<Stack
+                            verticalPosition={PositionEnum.CENTER}
+                            horizontalPosition={PositionEnum.CENTER}
+                            direction={DirectionEnum.ROW}
+                            spacing={2}
+                            style={stylesStack}>
+                      
+                            <Typography variant="h5">
+                                Bienvenido a 
+                            </Typography>
+                        </Stack>*/}
+                        <Grid xs={12} md={12} style={{ padding: 1 }}>
+                    <Box sx={{ height: "70px" }} position={"relative"}>
+                       <Image
+                                src={imageLogo}
+                                alt={"Image Login"}
+                                layout={ImageLayoutEnum.FILL}
+                                objectFit={ImageObjectFitEnum.CONTAIN}
+                                objectPosition={"bottom 24%"}
+                            />
+                    </Box>
+                </Grid>
+                   
                         <Stack
                             direction={DirectionEnum.COLUMN}
                             spacing={2}
@@ -130,6 +165,7 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 fullWidth={true}
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={TypeText.EMAIL}
+                                color="secondary"
                             />
                         </Stack>
                         <Stack
@@ -142,11 +178,30 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 label={"Contraseña"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
+                                color="secondary"
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={showPassword ? TypeText.TEXT : TypeText.PASSWORD}
                                 adornment={adormentPassword}
                             />
                         </Stack>
+                         <Stack
+                            direction={DirectionEnum.COLUMN}
+                            spacing={2}
+                            verticalPosition={PositionEnum.END}                          
+                        >
+                            <Typography
+                                align={"right"}
+                                onClick={handleOpenChangePass}
+                                sx={stylesTypography}
+                            >
+                                ¿Olvidó su contraseña?
+                            </Typography>
+                        </Stack>
+                        <Stack
+                            direction={DirectionEnum.COLUMN}
+                            spacing={2}>
+                            <CheckBox label="Recuerdame" checked={checkedRemember} onChange={()=>setCheckedRemember(!checkedRemember)} />
+                        </Stack>                        
                         <Stack
                             direction={DirectionEnum.COLUMN}
                             spacing={2}
@@ -159,20 +214,13 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 style={stylesButton}
                             />
                         </Stack>
-                        <Stack
-                            direction={DirectionEnum.COLUMN}
-                            spacing={2}
-                            verticalPosition={PositionEnum.CENTER}
-                            style={{ paddingBottom: 1 }}
-                        >
-                            <Typography
-                                align={"center"}
-                                onClick={handleOpenChangePass}
-                                sx={stylesTypography}
-                            >
-                                ¿Olvidó su contraseña?
-                            </Typography>
-                        </Stack>
+                        
+                        <Grid style={{width:"100%", marginTop: 2}} >
+                            <Divider>Ó</Divider>
+                          <ConnectThrough linksToSocialMedia={{facebook:"https://www.facebook.com",
+                           google:"https://www.google.com"}} />
+                        </Grid>
+                       
                     </Box>
                 </Form>
             )}
