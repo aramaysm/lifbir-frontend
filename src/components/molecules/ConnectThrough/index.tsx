@@ -28,7 +28,7 @@ const Index: FC<IProps> = ({linksToSocialMedia}:IProps) => {
         <Box sx={{ paddingTop: 2 }}>
             <Stack verticalPosition={PositionEnum.CENTER}>
                 <Typography align={"center"}>Conectarse a través de</Typography>
-                <Stack direction={DirectionEnum.ROW} spacing={2}>
+                <Stack direction={DirectionEnum.ROW} spacing={2} style={{marginTop: 10}}>
                     <Grid xs={12} md={6}>
                         <Button clickHandler={()=>push(linksToSocialMedia.facebook)}
                         label="Facebook" startIcon={<FacebookOutlinedIcon />}                        

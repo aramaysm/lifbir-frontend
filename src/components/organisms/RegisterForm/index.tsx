@@ -11,10 +11,15 @@ import {
     CountrySelect,
     FormHelperText,
     IconButton,
+    Image,
+    Grid,
     Link,
     Stack,
     TextField,
     Typography,
+    CheckBox,
+    ConnectThrough,
+   
 } from "@components";
 import {
     Adornment,
@@ -22,6 +27,8 @@ import {
     ColorEnum,
     DirectionEnum,
     EdgePosEnum,
+    ImageLayoutEnum,
+    ImageObjectFitEnum,
     PositionEnum,
     TextFieldSizeEnum,
     TextFieldVariantEnum,
@@ -34,6 +41,8 @@ import {
 import { CountryType } from "@models";
 import theme from "@components/theme";
 import { RegisterInitialValues } from "@components/organisms/RegisterForm/config";
+import imageLogo from "@public/images/LOGO_UNIDO_pink.svg";
+import { Divider } from "@mui/material";
 
 interface IProps {
     serverErrors: {
@@ -62,6 +71,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
     const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPass, setShowConfirmPass] = useState(false);
+    const [checkedRemember, setCheckedRemember ] = useState(true);
 
     const passwordToggleHandler = () => {
         setShowPassword(!showPassword);
@@ -130,6 +140,18 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                                 <>{serverErrors}</>
                             </FormHelperText>
                         )}
+                        <Grid xs={12} md={12} style={{ padding: 1 }}>
+                    <Box sx={{ height: "50px" }} position={"relative"}>
+                       <Image
+                                src={imageLogo}
+                                alt={"Image Login"}
+                                layout={ImageLayoutEnum.FILL}
+                                objectFit={ImageObjectFitEnum.CONTAIN}
+                                objectPosition={"bottom 24%"}
+                            />
+                    </Box>
+                </Grid>
+                   
                         <Stack
                             direction={DirectionEnum.COLUMN}
                             spacing={2}
@@ -137,6 +159,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                         >
                             <TextField
                                 label={"Correo"}
+                                color={"secondary"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
                                 size={TextFieldSizeEnum.SMALL}
@@ -150,6 +173,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                         >
                             <TextField
                                 label={"Contraseña"}
+                                color={"secondary"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
                                 size={TextFieldSizeEnum.SMALL}
@@ -166,6 +190,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                                 label={"Confirmar Contraseña"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
+                                color={"secondary"}
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={showConfirmPass ? TypeText.TEXT : TypeText.PASSWORD}
                                 adornment={adormentConfirmPassword}
@@ -186,36 +211,42 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                                 label={"Teléfono"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
+                                color={"secondary"}
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={TypeText.TELF}
                             />
                         </Stack>
                         <Stack
                             direction={DirectionEnum.COLUMN}
-                            spacing={2}
-                            style={stylesStack}
+                            spacing={2}>
+                            <CheckBox label="Acepto los términos de uso de LIFBIR" checked={checkedRemember}
+                             onChange={()=>setCheckedRemember(!checkedRemember)} />
+                        </Stack> 
+                       
+                          <Grid container xs={12} md={12} style={{ padding: 2 }}
                         >
-                            <Button
+                            <Grid xs={12} md={12}>
+                                 <Button
                                 disabled={isSubmitting}
                                 label={"Registrarse"}
                                 variant={ButtonVariantEnum.CONTAINED}
                                 style={stylesButton}
                             />
-                        </Stack>
-                        <Stack
-                            direction={DirectionEnum.ROW}
-                            verticalPosition={PositionEnum.CENTER}
-                            horizontalPosition={PositionEnum.CENTER}
-                            style={{ paddingBottom: 1 }}
-                        >
-                            <Typography align={"center"}>
-                                Al enviar, acepta los{" "}
-                                <Link href={``}>
-                                    terminos de uso
-                                </Link>{" "}
-                                de Lifbir
-                            </Typography>
-                        </Stack>
+                            </Grid>
+                            <Grid style={{textAlign:"center", marginTop: 2}} xs={12} md={12}>
+                                 <Link href={"/iniciar_sesion"}>
+                                   ¿Ya tiene cuenta?
+                                </Link>
+                            </Grid>
+                            
+                        </Grid>
+                         <Grid style={{width:"100%", marginTop: 1}} >
+                          <Divider>Ó</Divider>
+                          <ConnectThrough linksToSocialMedia={{facebook:"https://www.facebook.com",
+                           google:"https://www.google.com"}} />
+                        </Grid>
+                      
+                       
                     </Box>
                 </Form>
             )}

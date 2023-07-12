@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-key */
 import React, { FC } from "react";
 import { CountryType } from "@models";
-import { Image, Stack, Grid, Box, Button, TextField, SignInForm } from "@components";
+import { Image, Stack, Grid, Box, Button, TextField, SignInForm, RegisterForm } from "@components";
 import { ButtonVariantEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
@@ -34,12 +34,17 @@ const iconsList = [
 
 interface IProps {
     user:any;
-    image:string | StaticImageData;   
+    image:string | StaticImageData;
+    countriesList: readonly CountryType[];  
+    isLogin: boolean; 
+    
 }
 
 const Login_Template: FC<IProps> = ({
     user,
     image,
+    countriesList,
+    isLogin,
 }) => {
 
     const imageContent = image ? (
@@ -75,9 +80,13 @@ const Login_Template: FC<IProps> = ({
         </Grid>
         <Grid  xs={12} sm={6} md={5} >
             <Grid style={{alignItems:"center" }} >
-                <SignInForm  handleToggleSignIn={function (): void {
-                    throw new Error("Function not implemented.");
-                } } />
+                {
+                    isLogin ?
+                        <SignInForm  handleToggleSignIn={function (): void {
+                        throw new Error("Function not implemented.");}}/>
+                    :
+                        <RegisterForm serverErrors={null} countriesList={countriesList} />
+                }
             </Grid>
         
         </Grid>

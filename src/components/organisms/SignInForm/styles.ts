@@ -18,5 +18,5 @@ export const stylesTypography = {
 
 export const stylesStack = { 
     paddingBottom: 2,
-    marginTop:"25px"
+    marginTop:2,
  };

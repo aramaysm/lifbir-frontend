@@ -14,14 +14,17 @@ import {
     Tabs,
 } from "@components";
 import Login_Template from "@components/templates/Login";
+import { CountryType } from "@models";
 
 
 interface Props {
     image:any;
     user:object;
+    countriesList?: readonly CountryType[];
+    isLogin: boolean;
 }
 
- const Login_Layout: FC<Props> = ({ user, image }) => {
+ const Login_Layout: FC<Props> = ({ user, image,countriesList,isLogin }) => {
     const [signinOpen, setSigninOpen] = useState(false);
     const [enterAnchorEl, setEnterAnchorEl] = useState<null | HTMLElement>(null);
     const [serverErrors, setServerErrors] = useState<{
@@ -69,7 +72,8 @@ interface Props {
             <CssBaseline />
            
             <Box component="main" >
-                <Login_Template image={image} user={user} />
+                <Login_Template image={image} user={user} isLogin={isLogin}
+                 countriesList={countriesList} />
             </Box>
            
         </>

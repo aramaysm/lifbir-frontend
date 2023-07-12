@@ -12,6 +12,7 @@ import {
     Grid,
     IconButton,
     Image,
+    Link,
     Stack,
     TextField,
     Typography,
@@ -124,7 +125,7 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
         >
             {({ isSubmitting }) => (
                 <Form style={{ width:"100%"}}>
-                    <Box sx={{ padding: 3}}>
+                    <Box  sx={{ padding: 3}}>
                         {serverErrors && (
                             <FormHelperText error focused style={{ maxWidth: 280, mb: 3 }}>
                                 <>{serverErrors}</>
@@ -141,17 +142,17 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 Bienvenido a 
                             </Typography>
                         </Stack>*/}
-                        <Grid xs={12} md={12} style={{ padding: 1 }}>
-                    <Box sx={{ height: "70px" }} position={"relative"}>
-                       <Image
+                        <Grid  xs={12} md={12} style={{ padding: 1 }}>
+                           <Box  sx={{ height: "70px" }} position={"relative"}>
+                              <Image
                                 src={imageLogo}
                                 alt={"Image Login"}
                                 layout={ImageLayoutEnum.FILL}
                                 objectFit={ImageObjectFitEnum.CONTAIN}
                                 objectPosition={"bottom 24%"}
-                            />
-                    </Box>
-                </Grid>
+                              />
+                           </Box>
+                        </Grid>
                    
                         <Stack
                             direction={DirectionEnum.COLUMN}
@@ -202,18 +203,23 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                             spacing={2}>
                             <CheckBox label="Recuerdame" checked={checkedRemember} onChange={()=>setCheckedRemember(!checkedRemember)} />
                         </Stack>                        
-                        <Stack
-                            direction={DirectionEnum.COLUMN}
-                            spacing={2}
-                            style={stylesStack}
+                        <Grid container xs={12} md={12} style={{ padding: 2 }}
                         >
-                            <Button
+                            <Grid xs={12} md={12}>
+                                <Button
                                 disabled={isSubmitting}
                                 label={"Iniciar sesión"}
                                 variant={ButtonVariantEnum.CONTAINED}
                                 style={stylesButton}
                             />
-                        </Stack>
+                            </Grid>
+                            <Grid style={{textAlign:"center", marginTop: 2}} xs={12} md={12}>
+                                 <Link href={"/registro"}>
+                                   ¿Aún no tiene cuenta?
+                                </Link>
+                            </Grid>
+                            
+                        </Grid>
                         
                         <Grid style={{width:"100%", marginTop: 2}} >
                             <Divider>Ó</Divider>
