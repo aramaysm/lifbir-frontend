@@ -143,7 +143,7 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                             </Typography>
                         </Stack>*/}
                         <Grid  xs={12} md={12} style={{ padding: 1 }}>
-                           <Box  sx={{ height: "70px" }} position={"relative"}>
+                           <Box sx={{ height: "70px" }} position={"relative"}>
                               <Image
                                 src={imageLogo}
                                 alt={"Image Login"}

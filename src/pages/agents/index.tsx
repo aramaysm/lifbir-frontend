@@ -7,6 +7,7 @@ import profilePhoto from "@public/images/account/boy_small.png";
 import { GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import { dehydrate, QueryClient } from "react-query";
+import Agents_Layout from "@components/layouts/Layout/Agents";
 
 
 
@@ -115,7 +116,7 @@ export default function Agents({ user }: ParamsAgents) {
             <Head>
                 <title>LIFVIR</title>
             </Head>
-            <Profile_Layout 
+            <Agents_Layout 
                 user={user}               
                 imgProfile={profilePhoto}
                 countriesList={listCountry}

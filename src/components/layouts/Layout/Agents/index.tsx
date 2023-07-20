@@ -17,6 +17,7 @@ import { ColorEnum, TabItem } from "@components/types";
 
 import { CountryType } from "@models";
 import ProfileTemplate from "@components/templates/Account/profile";
+import AgentsTemplate from "@components/templates/Agents";
 
 interface Props {
     countriesList: readonly CountryType[];

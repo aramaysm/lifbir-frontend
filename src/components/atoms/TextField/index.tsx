@@ -28,6 +28,8 @@ interface IProps {
     typeText?: TypeText;
     name?: string;
     color:string;
+    onChange?: (event:any)=> void;
+
 }
 
 const Index: FC<IProps> = ({
@@ -44,6 +46,7 @@ const Index: FC<IProps> = ({
     typeText,
     name,
     color,
+    onChange,
 }) => {
     const inputComponentProps: MuiInputProps = InputProps
         ? { ...InputProps }
@@ -75,6 +78,7 @@ const Index: FC<IProps> = ({
             type={typeText}
             name={name}
             color={color}
+            onChange={onChange}
         />
     );
 };

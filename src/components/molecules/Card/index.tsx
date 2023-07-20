@@ -25,7 +25,7 @@ import {
 import {
     stylesCardAction,
     stylesCardButton,
-    stylesCardButtonBordered    
+    stylesCardButtonBordered,    
 } from "@components/molecules/Card/styles";
 
 interface Props {
@@ -48,6 +48,7 @@ interface Props {
     imagePositionLeft?: boolean;
     justifyContentAction: string;
     imageSize?:any;
+    imageFit?: ImageObjectFitEnum;
 }
 
 const Index: FC<Props> = ({
@@ -68,7 +69,8 @@ const Index: FC<Props> = ({
         imagePositionRight,
         imagePositionLeft,
         justifyContentAction,
-        imageSize
+        imageSize,
+        imageFit,
     }) => {
     const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -76,8 +78,8 @@ const Index: FC<Props> = ({
         <Image
             alt={title}
             src={image}
+           layout={ImageLayoutEnum.FILL}
             objectFit={ImageObjectFitEnum.CONTAIN}
-            layout={ImageLayoutEnum.RESPONSIVE}
             height={imageSize ? imageSize.height : null}
             width={imageSize ? imageSize.width : null}
             
@@ -170,12 +172,17 @@ const Index: FC<Props> = ({
                     </Grid>
                 </Grid>
             ) :  (
-                <>
-                    <CardContent>
-                        <Box position={"relative"} sx={{marginBottom:-8, marginTop:-7}}>
+                <Grid container 
+                direction={DirectionEnum.ROW }
+                 verticalPosition={PositionEnum.CENTER}
+                 style={{justifyContent:"center"}}>
+                    <Grid xs={12} md={7} style={{ padding: 0 }}>
+                        <Box sx={{ height: "200px", margin: 1.5 }} position={"relative"}>
                             {imageContent}
                         </Box>
-                        <Box position={"relative"} >
+                    </Grid>
+                    <Grid xs={12} md={7}>
+                    <CardContent>                       
                             <Grid 
                              direction={DirectionEnum.COLUMN}>
                                 <Grid style={{textAlign:"center"}}>
@@ -199,10 +206,11 @@ const Index: FC<Props> = ({
                                 </Grid>
                                 
                             </Grid>
-                        </Box>
+                       
                     </CardContent>
                     {buttonContent}
-                </>
+                </Grid>
+                </Grid>
             ) }
         </Card>
     );
