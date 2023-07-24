@@ -93,9 +93,12 @@ const Index: FC<Props> = ({
                 maxWidth: maxWidth,
                 height: height,
                 backgroundColor: bgColor,
-                borderRadius:"15px",
+               /* borderRadius:"15px",*/
+               borderBottom:"2px solid #eeee",
+                marginTop:"15px",
+                boxShadow:"none !important",
                 display: isSmDown ? "inherint" : displayCard,
-                boxShadow: "0 5px 10px 2px rgb(0 0 0 / 5%)",
+                /*boxShadow: "0 5px 10px 2px rgb(0 0 0 / 5%)",*/
                 "&:hover": {
                     transform: "scale(1.01)",
                     transition: "0.5s",
@@ -106,7 +109,8 @@ const Index: FC<Props> = ({
            
                 <Grid container 
                 direction={DirectionEnum.ROW }
-                 verticalPosition={PositionEnum.SPACING_BETWEEN}>
+
+                 verticalPosition={PositionEnum.CENTER}>
                     <Grid xs={12} md={2} style={{ padding: 0 }}>
                         <Box sx={{ height: "200px", margin: 1.5 }} position={"relative"}>
                             {imageContent}
@@ -116,17 +120,19 @@ const Index: FC<Props> = ({
                       <Grid container 
                           direction={DirectionEnum.COLUMN}
                           verticalPosition={PositionEnum.SPACING_BETWEEN}>
+                             <Typography variant="h6"
+                              sx={{fontStyle:"italic", fontWeight:"bold"}}>{nameAgent}</Typography>
+                         <Typography sx={{fontStyle:"italic"}}>{nameCompany}</Typography>
                         </Grid>
-                         <Typography>{nameAgent}</Typography>
-                         <Typography>{nameCompany}</Typography>
+                        
                     </Grid>
                     <Grid xs={12} md={3} style={{ padding: 0 }}>
                       <Grid container 
                           direction={DirectionEnum.COLUMN}
                           verticalPosition={PositionEnum.SPACING_BETWEEN}>
                         </Grid>
-                            <Typography>{phoneAgent}</Typography>
-                            <Typography>{emailAgent}</Typography>
+                            <Typography variant="body1">{phoneAgent}</Typography>
+                            <Typography variant="body1">{emailAgent}</Typography>
                         </Grid>
                     <Grid xs={12} md={4}>
                       <Grid container 

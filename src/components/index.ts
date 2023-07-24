@@ -42,7 +42,7 @@ import RegisterForm from "@components/organisms/RegisterForm";
 import SignInForm from "@components/organisms/SignInForm";
 import SearchContent from "@components/organisms/SearchContent";
 import TextPublicity from "@components/organisms/TextPublicity";
-
+import CardAgent from "@components/molecules/Card/CardAgent"
 import Layout from "@components/layouts/Layout";
 
 import HomeTemplate from "@components/templates/Home";
@@ -68,6 +68,7 @@ export {
     CardActions,
     CardContent,
     Card,
+    CardAgent,
     ConnectThrough,
     CountrySelect,
     DialogActions,
