@@ -33,9 +33,9 @@ import Menu from "@components/molecules/Menu";
 import TabContent from "@components/molecules/Tab/TabContent";
 import Tabs from "@components/molecules/Tab/Tabs";
 import Tab from "@components/molecules/Tab";
-
-import Banner from "@components/organisms/BannerContent";
 import ContactCard from "@components/organisms/ContactCard";
+import Banner from "@components/organisms/BannerContent";
+import ContactBanner from "@components/organisms/ContactBanner";
 import Footer from "@components/organisms/Footer";
 import Navbar from "@components/organisms/Navbar";
 import RegisterForm from "@components/organisms/RegisterForm";
@@ -44,8 +44,10 @@ import SearchContent from "@components/organisms/SearchContent";
 import TextPublicity from "@components/organisms/TextPublicity";
 import CardAgent from "@components/molecules/Card/CardAgent"
 import Layout from "@components/layouts/Layout";
-
+import CustomToolBarTable from "@components/molecules/Table/CustomToolBarTable"
 import HomeTemplate from "@components/templates/Home";
+import Table from "@components/molecules/Table"
+import ReviewCard from "@components/organisms/ReviewCard"
 
 export {
     AutoComplete,
@@ -71,6 +73,7 @@ export {
     CardAgent,
     ConnectThrough,
     CountrySelect,
+    CustomToolBarTable,
     DialogActions,
     DialogContent,
     DialogTitle,
@@ -86,12 +89,15 @@ export {
     Tab,
     Banner,
     ContactCard,
+    ContactBanner,
     Footer,
     Navbar,
     RegisterForm,
     SignInForm,
     SearchContent,
+    Table,
     TextPublicity,
     Layout,
     HomeTemplate,
+    ReviewCard,
 }

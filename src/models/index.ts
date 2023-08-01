@@ -36,3 +36,19 @@ export interface RadioButtonType {
     label:string;
     value:string;
 }
+
+export interface PersonalInfoDta_CardAgent{
+    icon: string;
+    key: string;
+    value: string;
+};
+
+export interface Agent_Dto {
+    id: string;
+    fullname:string;
+    company_name: string;
+    phone: string;
+    email:string;
+    cant_reviews:number;
+    photo: string | null;
+}

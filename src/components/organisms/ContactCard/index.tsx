@@ -1,123 +1,97 @@
-import React, { FC } from "react";
-import Card from "@mui/material/Card";
-import { StaticImageData } from "next/image";
+import React, { FC,useState } from "react";
+import { Image, Stack, Grid, Box, Button, TextField, Card, CardAgent, Divider} from "@components";
+import { ButtonVariantEnum, ColorEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TabItem, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
+import Typography from '@mui/material/Typography';
+import { stylesButtonGridContained, textFieldStyle } from "./styles";
 
-import {
-    ButtonSizeEnum,
-    ButtonVariantEnum,
-    DirectionEnum,
-    ImageLayoutEnum,
-    ImageObjectFitEnum,
-    PositionEnum,
-} from "@components/types";
-import {
-    Box,
-    Button,
-    CardActions,
-    CardContent,
-    Grid,
-    Image,
-    Stack,
-    Typography,
-} from "@components/index";
-import {
-    stylesButton,
-    stylesCard,
-    stylesCardActions,
-    stylesGridButton,
-    stylesGridRow
-} from "@components/organisms/ContactCard/styles";
 
-interface Props {
-    title: string;
-    content: string;
-    textButton?: string;
-    maxWidth?: string;
-    height?: string;
-    image?: string | StaticImageData;
-    positionButton?: PositionEnum;
-    bgColor?: string;
-    displayCard?: string;
+interface IProps {
+    onHandleButton: (data:any)=> void;
 }
 
-const ContactCard: FC<Props> = ({
-    title,
-    content,
-    textButton,
-    maxWidth,
-    height,
-    image,
-    bgColor,
-}) => {
-    const imageContent = image ? (
-        <Image
-            src={image}
-            alt={title}
-            layout={ImageLayoutEnum.FILL}
-            objectFit={ImageObjectFitEnum.COVER}
-            objectPosition={"bottom 24%"}
-        />
-    ) : null;
+const Index: FC<IProps> = ({ onHandleButton }) => {
 
-    const buttonContent = textButton ? (
-       
-            <Grid                
-                horizontalPosition={PositionEnum.CENTER}
-                xs={12} md={2} style={stylesGridButton} >
-                    <Button
-                        size={ButtonSizeEnum.LARGE}
-                        variant={ButtonVariantEnum.CONTAINED}
-                        label={textButton}
-                        style={stylesButton}
-                    />
-               
-            </Grid>
-        
-    ) : null;
+    const[name, setName] = useState<string>("");
+    const[phone, setPhone] = useState<string>("");
+    const[email, setEmail] = useState<string>("");
+    const[message, setMessage] = useState<string>("");
+
 
     return (
-        <Card sx={stylesCard(maxWidth, height, bgColor)}>
-            <Grid container style={stylesGridRow}>               
-                <Grid xs={12} md={9}>                   
-                        <CardContent style={{ height: "90%" }}>
-                            <Stack spacing={2} direction={DirectionEnum.COLUMN}>
-                                <Typography
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    color="white"
-                                    sx={{fontWeight:"bold"}} >
-                                    {title}
+        <Grid style={{border:"1px solid #e1e1e1", borderRadius:"3px",
+        backgroundColor: "white"}}
+         xs={12} md={12}>
+                            <Grid direction={DirectionEnum.COLUMN}
+                            horizontalPosition={PositionEnum.CENTER}>
+                                <Typography variant="h6" color="text.primary" 
+                                            sx={{fontWeight:"bold"}} >
+                                   Contactenos
                                 </Typography>
-                                <Typography variant="body1" color="white">
-                                    {content}
-                                </Typography>
-                            </Stack>
-                        </CardContent>
-                        
-                </Grid>  
-                    
-                {buttonContent}
-                                 
-            </Grid>
-        </Card>
-    );
-};
+                                
+                                <Divider style={{marginTop:1}}></Divider>
 
-ContactCard.defaultProps = {
-    maxWidth: "445px",
-    height: "auto",
-    positionButton: PositionEnum.CENTER,
-    bgColor: "none",
-    displayCard: "inherint",
-};
+                                <Grid style={{margin: 2}}
+                                direction={DirectionEnum.COLUMN}
+                                horizontalPosition={PositionEnum.CENTER}>
+                                    <TextField
+                                    color={ColorEnum.SECONDARY}
+                                    name={"names"}
+                                    label={"Nombre"}
+                                    variant={TextFieldVariantEnum.OUTLINED}
+                                    fullWidth={true}
+                                    size={TextFieldSizeEnum.SMALL}
+                                    style={textFieldStyle}
+                                    value={name}
+                                    onChange={(event)=> setName(event.target.value)} />
 
-export default ContactCard;
+                                    <TextField
+                                    color={ColorEnum.SECONDARY}
+                                    name={"phone"}
+                                    label={"Telefono"}
+                                    variant={TextFieldVariantEnum.OUTLINED}
+                                    fullWidth={true}
+                                    size={TextFieldSizeEnum.SMALL}
+                                    style={textFieldStyle}
+                                    value={phone}
+                                    onChange={(event)=> setPhone(event.target.value)} />
 
-/*
-<Grid xs={12} md={4} style={{ padding: 0 }}>
-<Box sx={{ height: "300px", margin: 2 }} position={"relative"}>
-    {imageContent}
-</Box>
-</Grid>
-*/
+                                    <TextField
+                                    color={ColorEnum.SECONDARY}
+                                    name={"email"}
+                                    label={"Correo"}
+                                    variant={TextFieldVariantEnum.OUTLINED}
+                                    fullWidth={true}
+                                    size={TextFieldSizeEnum.SMALL}
+                                    style={textFieldStyle} 
+                                    value={email}
+                                    onChange={(event)=> setEmail(event.target.value)}/>
+
+                                    <TextField
+                                    color={ColorEnum.SECONDARY}
+                                    name={"msg"}
+                                    label={"Mensaje (Opcional)"}
+                                    variant={TextFieldVariantEnum.OUTLINED}
+                                    fullWidth={true}
+                                    size={TextFieldSizeEnum.SMALL}
+                                    style={textFieldStyle}
+                                    multiline
+                                    value={message}
+                                    onChange={(event)=> setMessage(event.target.value)} />
+
+                                     <Button 
+                                     clickHandler={onHandleButton}                              
+                                    label={"Enviar"}
+                                    variant={ButtonVariantEnum.CONTAINED}
+                                    style={stylesButtonGridContained}
+                                />
+                                </Grid>
+
+                               
+                            </Grid>
+                           </Grid>
+    )
+
+}
+
+
+export default Index;

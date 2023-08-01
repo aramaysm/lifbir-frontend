@@ -5,6 +5,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 
 import {
     Adornment,
+    ColorEnum,
     EdgePosEnum,
     StyleObject,
     TextFieldSizeEnum,
@@ -14,6 +15,7 @@ import {
 
 interface IProps {
     label?: string;
+    value?:string;
     id?: string;
     disabled?: boolean;
     placeholder?: string;
@@ -27,14 +29,16 @@ interface IProps {
     size?: TextFieldSizeEnum;
     typeText?: TypeText;
     name?: string;
-    color:string;
+    color: ColorEnum;
     onChange?: (event:any)=> void;
-
+    multiline?:boolean;
+    rows?: number;
 }
 
 const Index: FC<IProps> = ({
     label,
     id,
+    value,
     adornment,
     placeholder,
     style,
@@ -47,6 +51,8 @@ const Index: FC<IProps> = ({
     name,
     color,
     onChange,
+    multiline,
+    rows,
 }) => {
     const inputComponentProps: MuiInputProps = InputProps
         ? { ...InputProps }
@@ -77,8 +83,11 @@ const Index: FC<IProps> = ({
             size={size}
             type={typeText}
             name={name}
+            value={value}
             color={color}
             onChange={onChange}
+            multiline
+            maxRows={rows}
         />
     );
 };

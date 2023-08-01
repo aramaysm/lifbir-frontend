@@ -75,6 +75,10 @@ export type TabItem = {
 export enum ColorEnum {
     PRIMARY = "primary",
     SECONDARY = "secondary",
+    SUCCESS = "success",
+    ERROR = "error",
+    INFO = "info",
+    WARNING = "warning",
     INHERIT = "inherit",
 }
 
@@ -189,3 +193,19 @@ export enum TextFieldSizeEnum {
     SMALL = "small",
     MEDIUM = "medium",
 }
+
+export enum TypeDataColumn {
+    TEXT = "text",
+    BUTTON = "button",
+    CHECKBOX = "checkbox",
+    IMAGE = "image",
+    ICON = "icon",
+}
+
+export type ColumnTable = {
+    id: string,
+    type: TypeDataColumn,
+    label: string,
+}
+
+ 

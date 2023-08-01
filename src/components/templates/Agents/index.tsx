@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { CountryType } from "@models";
+import { Agent_Dto, CountryType } from "@models";
 import { Image, Stack, Grid, Box, Button, TextField, Card, CardAgent } from "@components";
 import { ButtonVariantEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
 import Typography from '@mui/material/Typography';
@@ -14,13 +14,16 @@ import {
     textFieldStyle,
     stylesButtonGridContained,
 } from "@components/templates/Account/styles"
-import { Accordion, AccordionDetails, AccordionSummary, Pagination } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Divider, Pagination } from "@mui/material";
 import Select from "@components/atoms/Select";
 import TuneIcon from "@mui/icons-material/Tune";
 import { languages, specialities, agents } from "./load_data";
 import imageContactAgent from "@public/images/account/undraw_People_search_re_5rre.png";
 import imageNotFound from "@public/images/account/undraw_No_data_re_kwbl.png";
 import profilePhoto from "@public/images/account/boy_small.png";
+import { useRouter } from 'next/navigation';
+
+
 
 interface IProps {
     user:any;
@@ -42,11 +45,15 @@ const AgentsTemplate: FC<IProps> = ({
     const [filterBySpeciality, setFilterBySpeciality] = useState<string>("");
     const [filterByLanguage, setFilterByLanguage] = useState<string>("");
     const [page, setPage] = useState<number>(1);
-    const [count, setCount] = useState<number>(10);
+    const [count, setCount] = useState<number>(Math.round(agents.length/4));
+ 
+
 
     const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
         setPage(value);
     }
+
+   
 
     return (
         <Grid  style={{padding:"25px"}}>
@@ -179,26 +186,28 @@ const AgentsTemplate: FC<IProps> = ({
                         <Grid container style={{width:"100%"}}
                             direction={DirectionEnum.COLUMN}
                             verticalPosition={PositionEnum.SPACING_BETWEEN}>
-                                <Grid style={{borderLeft:"2px solid #ea458e"}}>
+                                <Grid >
+                                    <Divider orientation="vertical" variant="middle" flexItem />
                                     <Typography  variant="h5">Lista de agentes</Typography>
                                 </Grid>
                                 
                                 <Grid  xs={12} md={12} style={{width:"100%"}}
                                 direction={DirectionEnum.COLUMN} >
                                     {
-                                    agents.slice((page-1)*4, (page-1)*4+4).map((item:any) =>
+                                    agents.slice((page-1)*4, (page-1)*4+4).map((item: Agent_Dto) =>
                                         <CardAgent 
+                                        idAgent={item.id}
                                         image={profilePhoto}
                                         maxWidth="100%"
-                                        key={item.nameAgent}
-                                        title={item.nameAgent} 
+                                        key={item.company_name}
+                                        title={item.fullname} 
                                         content={"df"}
-                                        nameAgent={item.nameAgent}
-                                        nameCompany={item.nameCompany}
-                                        phoneAgent={item.phoneAgent}
-                                        emailAgent={item.emailAgent} 
-                                        cantReviewsAgent={item.cantReviewsAgent}
-                                        scoreAgent={item.scoreAgent} />
+                                        nameAgent={item.fullname}
+                                        nameCompany={item.company_name}
+                                        phoneAgent={item.phone}
+                                        emailAgent={item.email} 
+                                        cantReviewsAgent={item.cant_reviews}
+                                        />
                                     )
                                 } 
                                 </Grid>

@@ -1,7 +1,7 @@
 import React, { FC, SyntheticEvent } from "react";
 import Tab from "@mui/material/Tab";
-
-import { ColorEnum, TabsVariantEnum, TabItem } from "@components/types";
+import { a11yProps } from "@util/util";
+import { ColorEnum, TabsVariantEnum, TabItem, StyleObject } from "@components/types";
 import { Box, Tabs } from "@components";
 
 import {
@@ -15,9 +15,11 @@ type Props = {
     valueSelected: number;
     changeHandler: (event: SyntheticEvent, newValue: number) => void;
     tabs: TabItem[];
+    styleTabsProps?: any;
 };
 
-const Index: FC<Props> = ({ centered, tabs, valueSelected, changeHandler }) => {
+const Index: FC<Props> = ({ centered, tabs, valueSelected, 
+    changeHandler,styleTabsProps }) => {
     const tabsContent = tabs.map((t, i) => (
         <Tab key={i} label={t.label} {...a11yProps(i)} sx={tabStyle} />
     ));
@@ -29,8 +31,8 @@ const Index: FC<Props> = ({ centered, tabs, valueSelected, changeHandler }) => {
                 changeHandler={changeHandler}
                 centered={centered}
                 variant={TabsVariantEnum.FULLWIDTH}
-                color={ColorEnum.INHERIT}
-                style={stylesTabs}
+                color={ColorEnum.PRIMARY}
+                style={styleTabsProps ? styleTabsProps : stylesTabs}
             >
                 {tabsContent}
             </Tabs>

@@ -1,3 +1,5 @@
+
+
 import React, { FC, MouseEvent, ReactElement, useState } from "react";
 import WorkIcon from "@mui/icons-material/Work";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -50,7 +52,7 @@ export const Index: FC<IProps> = ({
 }) => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-    const { push } = useRouter();
+    const router = useRouter();
     const [isLogin] = useState(true);
 
     const accountMenuOpenHandler = (event: MouseEvent<HTMLElement>) => {
@@ -75,7 +77,7 @@ export const Index: FC<IProps> = ({
     };
 
     const onHandleButtonMenu = (rute:string) => {
-        push(rute);
+       router.push(rute);
     }
 
     let renderMenu: ReactElement;
@@ -126,7 +128,7 @@ export const Index: FC<IProps> = ({
                         </MenuItem>
                         <MenuItem clickHandler={handleCloseNavMenu}>
                             <Button
-                                clickHandler={()=>onHandleButtonMenu("/favorites")}
+                                clickHandler={()=>onHandleButtonMenu("/agents")}
                                 label="Favoritos"
                                 variant={ButtonVariantEnum.TEXT}
                                 style={{ p: 1 }}
@@ -178,27 +180,37 @@ export const Index: FC<IProps> = ({
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
                     <Tooltip title="Viajes">
-                        <IconButton style={styleIconButton} color={ColorEnum.INHERIT}>
+                        <IconButton style={styleIconButton} 
+                        clickHandler={()=>onHandleButtonMenu("/travels")}
+                         color={ColorEnum.INHERIT}>
                             <WorkIcon sx={styleIcon} />
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Favoritos">
-                        <IconButton style={styleIconButton} color={ColorEnum.INHERIT}>
+                        <IconButton style={styleIconButton} 
+                        clickHandler={()=>onHandleButtonMenu("/agents")}
+                        color={ColorEnum.INHERIT}>
                             <FavoriteBorderIcon sx={styleIcon} />
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Mensajes">
-                        <IconButton style={styleIconButton} color={ColorEnum.INHERIT}>
+                        <IconButton style={styleIconButton}
+                        clickHandler={()=>onHandleButtonMenu("/messages")}
+                        color={ColorEnum.INHERIT}>
                             <ForumOutlinedIcon sx={styleIcon} />
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Notificaciones">
-                        <IconButton style={styleIconButton} color={ColorEnum.INHERIT}>
+                        <IconButton style={styleIconButton} 
+                        clickHandler={()=>onHandleButtonMenu("/notifications")}
+                        color={ColorEnum.INHERIT}>
                             <NotificationsIcon sx={styleIcon} />
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Lenguaje">
-                        <IconButton style={styleIconButton} color={ColorEnum.INHERIT}>
+                        <IconButton style={styleIconButton}
+                        clickHandler={()=>onHandleButtonMenu("/language")}
+                        color={ColorEnum.INHERIT}>
                             <GTranslateOutlinedIcon sx={styleIcon} />
                         </IconButton>
                     </Tooltip>

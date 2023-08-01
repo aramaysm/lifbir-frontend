@@ -27,8 +27,13 @@ import {
     stylesCardButton,
     stylesCardButtonBordered,   
 } from "@components/molecules/Card/styles";
+import Rating from "@mui/material/Rating";
+import { useRouter } from 'next/navigation';
+
+
 
 interface Props {
+    
     title: string;
     content: string;
     textButton?: string;
@@ -43,12 +48,12 @@ interface Props {
     styleContent?: object;
     styleCard?:object;  
     imageSize?:any;
+    idAgent: string;
     nameAgent: string;
     nameCompany: string;
     phoneAgent:string;
     emailAgent: string;    
     cantReviewsAgent:number;
-    scoreAgent: number;
 }
 
 const Index: FC<Props> = ({
@@ -65,26 +70,32 @@ const Index: FC<Props> = ({
         styleContent,
         styleCard,       
         imageSize,
+        idAgent,
         nameAgent,
         nameCompany,
         phoneAgent,
         emailAgent,  
         cantReviewsAgent,
-        scoreAgent,
+       
     }) => {
     const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
+    const { push } = useRouter();
 
     const imageContent = image ? (
         <Image
             alt={title}
             src={image}
             objectFit={ImageObjectFitEnum.CONTAIN}
-            layout={ImageLayoutEnum.RESPONSIVE}
+            layout={ImageLayoutEnum.FILL}
             height={imageSize ? imageSize.height : null}
             width={imageSize ? imageSize.width : null}
             
         />
     ) : null;
+
+    const handleClick = () => {
+        push(`agents/${idAgent}`);
+    }
 
 
     return (
@@ -105,6 +116,7 @@ const Index: FC<Props> = ({
                     cursor: "pointer",
                 },
             }:styleCard}
+            onClick={handleClick}
         >
            
                 <Grid container 
@@ -112,7 +124,7 @@ const Index: FC<Props> = ({
 
                  verticalPosition={PositionEnum.CENTER}>
                     <Grid xs={12} md={2} style={{ padding: 0 }}>
-                        <Box sx={{ height: "200px", margin: 1.5 }} position={"relative"}>
+                        <Box sx={{ height: "100px", margin: 1.5 }} position={"relative"}>
                             {imageContent}
                         </Box>
                     </Grid>
@@ -138,8 +150,8 @@ const Index: FC<Props> = ({
                       <Grid container 
                           direction={DirectionEnum.COLUMN}
                           verticalPosition={PositionEnum.SPACING_BETWEEN}>
-                             <Typography>{cantReviewsAgent}</Typography>
-                            
+                             <Typography sx={{fontWeight:"bold"}} variant="body1">{cantReviewsAgent+" Reseñas"}</Typography>
+                            <Rating name="half-rating" defaultValue={100/cantReviewsAgent} precision={0.5} />
                         </Grid>
                     </Grid>
                 </Grid>

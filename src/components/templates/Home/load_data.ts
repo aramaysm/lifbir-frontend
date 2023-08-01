@@ -44,7 +44,7 @@ export const cardsRoles = (
             +" Anúnciate y déjate conoccer por los propietarios que deseen contratar tus servicios."
             +" Todos los que busquen economizar y que les manejes su negocio estarán buscando su experiencia.",
             image:images[1],
-        }
+        },
     ]
 }
 
@@ -54,7 +54,7 @@ export const infoWhoAreBanner = {
        "con las necesidades de los consumidores y profesionales de bienes raices. " +
        "LIFBIR esta para ayudar a compradores, vendedores, inquilinos, y propietarios " +
        "a encontrar sus metas",
-       textButton:"" 
+       textButton:"", 
     };
 
     export const infoAgentContactBanner = {
@@ -63,7 +63,7 @@ export const infoWhoAreBanner = {
         "con las necesidades de los consumidores y profesionales de bienes raices. " +
         "LIFBIR esta para ayudar a compradores, vendedores, inquilinos, y propietarios " +
         "a encontrar sus metas",
-        textButton:"Contactar agente" 
+        textButton:"Contactar agente", 
     };
 
     export const infoComercialContactBanner = {
@@ -74,6 +74,6 @@ export const infoWhoAreBanner = {
        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque\n" +
        "consequuntur ex explicabo hic nesciunt, nulla quasi quia quisquam, quos ratione\n" +
        "repellendus, ullam voluptates? Debitis expedita fugiat odio vero voluptate!",
-       textButton:"Contáctenos"
+       textButton:"Contáctenos",
     };
  
