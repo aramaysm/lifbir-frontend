@@ -73,7 +73,7 @@ interface Props {
            
             <Box component="main" >
                 <Login_Template image={image} user={user} isLogin={isLogin}
-                 countriesList={countriesList} />
+                 countriesList={[]} />
             </Box>
            
         </>

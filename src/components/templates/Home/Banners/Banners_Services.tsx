@@ -37,7 +37,7 @@ export const Banner_Services = () => {
                     paddingRight: "16px !important",
                 }}
                 >
-                    <Stack direction={DirectionEnum.ROW} xs={5} md={3}
+                    <Grid container direction={DirectionEnum.ROW} xs={5} md={3}
                      style={styles_Home.stylesContentCenter}>
                         <Typography
                                 variant="h4" 
@@ -45,7 +45,7 @@ export const Banner_Services = () => {
                                 Servicios
                                 <hr style={styles_Home.stylesHR}/>
                         </Typography>
-                    </Stack>
+                    </Grid>
                     
                 
              </Grid> 

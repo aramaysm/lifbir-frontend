@@ -48,6 +48,12 @@ import CustomToolBarTable from "@components/molecules/Table/CustomToolBarTable"
 import HomeTemplate from "@components/templates/Home";
 import Table from "@components/molecules/Table"
 import ReviewCard from "@components/organisms/ReviewCard"
+import Account_Layout from "./layouts/Layout/Account";
+import Profile_Layout from "./layouts/Layout/Account/profile";
+import Preferences_Layout from "./layouts/Layout/Account/preferencies";
+import Security_Layout from "./layouts/Layout/Account/security";
+import SocialNetworks_Layout from "./layouts/Layout/Account/social_networks";
+import Notifications_Layout from "./layouts/Layout/Account/notifications"
 
 export {
     AutoComplete,
@@ -100,4 +106,10 @@ export {
     Layout,
     HomeTemplate,
     ReviewCard,
+    Account_Layout,
+    Profile_Layout,
+    Preferences_Layout,
+    Security_Layout, 
+    SocialNetworks_Layout,
+    Notifications_Layout,
 }

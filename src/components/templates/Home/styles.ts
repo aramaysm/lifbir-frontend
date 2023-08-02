@@ -19,7 +19,7 @@
     top: { xs: 0, sm: 0, md: 0, xl: 0 },
     margin: 0,
     background: "#5E5D5DCC",
-    paddingBottom:"10px"
+    paddingBottom:"10px",
 };
 
  const styleTypographyBanner1 = {
@@ -38,35 +38,35 @@
     padding: 2,
     marginTop:"50px",
     justifyContent:"center",
-    alignItems:"center !important"
+    alignItems:"center !important",
  };
 
  const styleGridBanner6 = {
     paddingLeft: "16px !important",
     paddingRight: "16px !important",
     height:"100% !important",
-    marginTop:"20px"
+    marginTop:"20px",
  };
 
  const styleTypographyBanner5_1 = {
     color:"customGrey.main",
     marginRight:"5px",
-    fontWeight:"bold"
+    fontWeight:"bold",
 };
 
 const styleTypographyBanner5_2 = {
     color:"secondary.main",
     fontStyle:"italic",
-    fontWeight:"bold"
+    fontWeight:"bold",
 };
 
 const styleTitleCard = {
     fontSize:"24px",
-    fontWeight:"bold"
+    fontWeight:"bold",
 };
 
 const styleContentCard = {
-    fontSize:"18px !important"
+    fontSize:"18px !important",
 }
 const styleCardButton =(bgColor:any) =>
  {
@@ -110,5 +110,5 @@ const styleStackBannerContactComercial = {
     styleContentCard,
     styleCardButton,
     styleStackBannerContactAgent,
-    styleStackBannerContactComercial
+    styleStackBannerContactComercial,   
 };

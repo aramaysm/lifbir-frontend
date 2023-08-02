@@ -159,7 +159,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                         >
                             <TextField
                                 label={"Correo"}
-                                color={"secondary"}
+                                color={ColorEnum.PRIMARY}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
                                 size={TextFieldSizeEnum.SMALL}
@@ -173,7 +173,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                         >
                             <TextField
                                 label={"Contraseña"}
-                                color={"secondary"}
+                                color={ColorEnum.PRIMARY}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
                                 size={TextFieldSizeEnum.SMALL}
@@ -190,7 +190,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                                 label={"Confirmar Contraseña"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
-                                color={"secondary"}
+                                color={ColorEnum.PRIMARY}
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={showConfirmPass ? TypeText.TEXT : TypeText.PASSWORD}
                                 adornment={adormentConfirmPassword}
@@ -211,7 +211,7 @@ const Index: FC<IProps> = ({ serverErrors, countriesList }) => {
                                 label={"Teléfono"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
-                                color={"secondary"}
+                               color={ColorEnum.PRIMARY}
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={TypeText.TELF}
                             />

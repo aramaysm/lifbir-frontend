@@ -180,16 +180,14 @@ const AgentsDataTemplate: FC<IProps> = ({
                                          horizontalPosition={PositionEnum.CENTER}>
                                          {
                                             soc_media_keys.map((item:string) => {
+                                                const socialMedias:any = socialMediaObject(
+                                                    ColorEnum.SECONDARY);
                                                 return (
                                                      <Grid container key={item} xs={4} md={4}>
-                                                    {
-                                                        socialMediaObject(ColorEnum.SECONDARY)[item]
-                                                    }
-                                                </Grid>
+                                                        {socialMedias[item] }
+                                                     </Grid>
                                                 )
-                                            }
-                                               
-                                            )
+                                            })
                                         }
                                         </Grid>
                                        
@@ -354,7 +352,7 @@ const AgentsDataTemplate: FC<IProps> = ({
                             fullname_user={reviews[page-1].fullname_user} />
 
                              <Pagination page={page} onChange={handleChange}
-                                      count={count} />
+                                count={count} />
                         </Grid>
                         
                        

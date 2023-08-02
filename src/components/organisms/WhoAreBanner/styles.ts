@@ -26,7 +26,7 @@ export const stylesTitlePrimary={
 
 export const stylesTitleSecondary = {
     fontWeight:"bold",
-    color:"secondary.main"
+    color:"secondary.main",
 };
 
 export const styleHR = {
@@ -34,7 +34,7 @@ export const styleHR = {
  width:"30px", 
  backgroundColor:"#e900ca",
  border:"none", 
- textAlign:"start"
+ 
 };
 
 export const styleCardContent= {

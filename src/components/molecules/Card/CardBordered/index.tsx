@@ -25,7 +25,7 @@ import {
 import {
     stylesCardAction,
     stylesCardButton,
-    stylesCardButtonBordered
+    stylesCardButtonBordered,
 } from "@components/molecules/Card/styles";
 
 interface Props {

@@ -1,4 +1,4 @@
-import { TypeDisplay } from "components/types";
+import { TypeDisplay } from "@components/types";
 
 export const styleIconButton = {
     p: 1,

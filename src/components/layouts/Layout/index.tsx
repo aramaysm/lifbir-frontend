@@ -14,7 +14,7 @@ import {
     Tabs,
 } from "@components";
 import { ColorEnum, TabItem } from "@components/types";
-
+import {a11yProps} from "@util/util"
 import { CountryType } from "@models";
 
 interface Props {
@@ -110,7 +110,11 @@ const Index: FC<Props> = ({ children, sesionTabs, countriesList }) => {
                         />
                     )}
                     <Divider />
-                    <ConnectThrough/>
+                    <ConnectThrough linksToSocialMedia={{
+                        facebook: "",
+                        instagram: undefined,
+                        google: "",
+                    }}/>
                 </>
             </SimpleDialog>
         </>

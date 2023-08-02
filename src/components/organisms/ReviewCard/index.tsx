@@ -19,7 +19,7 @@ interface IProps {
 
 const Index: React.FC<IProps> = ({opinion, score, date, fullname_user}) => {
 
-    const [entries, setEntries ] = React.useState(Object.entries(score));
+    const entries = Object.entries(score);
 
     const calculateGeneralScore = (score.Experiencia + score.Conocimiento 
         + score.Negociacion)/3;
@@ -66,21 +66,26 @@ const Index: React.FC<IProps> = ({opinion, score, date, fullname_user}) => {
             direction={DirectionEnum.COLUMN}
             style={{marginTop: 2, padding:1}}>
                 {
+                    
                     entries.map((item) => 
-                     <Grid key={item[0]} 
-                      container
-                      xs={12} md={12} >
-                        <Grid xs={4} md={4}>
-                         <Typography color="customGrey.main">
-                            {item[0]+": "}
-                         </Typography>
-                        </Grid>
-                        <Grid xs={8} md={8}>
-                             <Rating name="half-rating" 
-                             defaultValue={item[1]} precision={0.5} />
-                               
-                        </Grid>
-                      </Grid>
+                     {
+                         console.log("Item-",item[1])
+                     return (                       
+                            <Grid key={item[0]} 
+                            container
+                            xs={12} md={12} >
+                                <Grid xs={4} md={4}>
+                                <Typography color="customGrey.main">
+                                    {item[0]+": "}
+                                </Typography>
+                                </Grid>
+                                <Grid xs={8} md={8}>
+                                    <Rating name="half-rating" 
+                                    defaultValue={item[1]} precision={0.5} />
+                                    
+                                </Grid>
+                            </Grid>)
+                      }
                     )
                 }
             </Grid>

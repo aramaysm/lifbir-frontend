@@ -8,7 +8,7 @@ import {
     CardContent,
     CardActions,
     Button,
-    ContactCard,
+    ContactBanner,
 } from "@components";
 import imageContactAgent from "@public/images/homepage/Empresario2.png"
 import { ButtonSizeEnum, ButtonVariantEnum, DirectionEnum, ImageLayoutEnum, ImageObjectFitEnum, PositionEnum, TabItem } from "@components/types";
@@ -33,7 +33,7 @@ export const Banner_ContactComercial = () => {
                     paddingRight: "16px !important",
                 }}
             >
-                <ContactCard title={infoComercialContactBanner.title}
+                <ContactBanner title={infoComercialContactBanner.title}
                 content={infoComercialContactBanner.description}
                 textButton={infoComercialContactBanner.textButton}
                 maxWidth="100%"

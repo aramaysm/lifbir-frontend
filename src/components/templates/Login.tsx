@@ -68,7 +68,7 @@ const Login_Template: FC<IProps> = ({
       <Grid container style={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
-          xs={false}
+          xs={0}
           sm={6}
           md={7}
           

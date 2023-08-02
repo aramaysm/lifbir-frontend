@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { CountryType } from "@models";
 import { Image, Stack, Grid, Box, Button, TextField } from "@components";
-import { ButtonVariantEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
+import { ButtonVariantEnum, ColorEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
@@ -63,7 +63,7 @@ const SecurityTemplate: FC<IProps> = ({
                         <Grid container spacing={2} style={{marginTop:"15px !important",
                              width:"100%"}}>
                                 <Grid xs={12} md={6}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"password"}
                                     label={"Contraseña actual"}
                                     variant={TextFieldVariantEnum.OUTLINED}
@@ -78,7 +78,7 @@ const SecurityTemplate: FC<IProps> = ({
                                 </Typography>
                                 </Grid>
                                 <Grid xs={12} md={7}>
-                                <TextField
+                                <TextField color={ColorEnum.SECONDARY}
                                     name={"new_password"}
                                     label={"Contraseña nueva"}
                                     variant={TextFieldVariantEnum.OUTLINED}
@@ -88,7 +88,7 @@ const SecurityTemplate: FC<IProps> = ({
                                     style={textFieldStyle} />
                                 </Grid>
                                 <Grid xs={12} md={7}>
-                                <TextField
+                                <TextField color={ColorEnum.SECONDARY}
                                     name={"confirm_password"}
                                     label={"Contraseña actual"}
                                     variant={TextFieldVariantEnum.OUTLINED}

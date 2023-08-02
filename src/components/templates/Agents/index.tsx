@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Agent_Dto, CountryType } from "@models";
 import { Image, Stack, Grid, Box, Button, TextField, Card, CardAgent } from "@components";
-import { ButtonVariantEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
+import { ButtonVariantEnum, ColorEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
@@ -85,7 +85,7 @@ const AgentsTemplate: FC<IProps> = ({
                                             <TextField onChange={(event:any)=>
                                             {setIsNew(false);
                                                 setSearchByName(event.target.value)}}
-                                            color="secondary"
+                                            color={ColorEnum.SECONDARY}
                                         name={"location"}
                                         label={"Ubicacion"}
                                         variant={TextFieldVariantEnum.OUTLINED}
@@ -105,7 +105,7 @@ const AgentsTemplate: FC<IProps> = ({
                                             onChange={(event:any)=>
                                                 {setIsNew(false);
                                                 setSearchByName(event.target.value)}}
-                                            color="secondary"
+                                            color={ColorEnum.SECONDARY}
                                         name={"name"}
                                         label={"Nombre"}
                                         variant={TextFieldVariantEnum.OUTLINED}

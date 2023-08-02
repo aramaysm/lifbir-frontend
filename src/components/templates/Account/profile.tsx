@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { CountryType } from "@models";
 import { Image, Stack, Grid, Box, Button, TextField } from "@components";
-import { ButtonVariantEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
+import { ButtonVariantEnum, ColorEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
@@ -107,16 +107,17 @@ const ProfileTemplate: FC<IProps> = ({
                         <Grid container spacing={2} style={{marginTop:"15px !important",
                              width:"100%"}}>
                                 <Grid xs={12} md={4}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"names"}
                                     label={"Nombres"}
                                     variant={TextFieldVariantEnum.OUTLINED}
                                     fullWidth={true}
                                     size={TextFieldSizeEnum.SMALL}
-                                    style={textFieldStyle} />
+                                    style={textFieldStyle}
+                                     />
                                 </Grid>
                                 <Grid xs={12} md={8}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"lastname"}
                                     label={"Apellidos"}
                                     variant={TextFieldVariantEnum.OUTLINED}
@@ -125,7 +126,7 @@ const ProfileTemplate: FC<IProps> = ({
                                     style={textFieldStyle}/>
                                 </Grid>
                                 <Grid xs={12} md={4}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"sex"}
                                     label={"Sexo"}
                                     variant={TextFieldVariantEnum.OUTLINED}
@@ -135,7 +136,7 @@ const ProfileTemplate: FC<IProps> = ({
                                     typeText={TypeText.EMAIL} />
                                 </Grid>
                                 <Grid xs={12} md={10}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"language"}
                                     label={"Idiomas"}
                                     variant={TextFieldVariantEnum.OUTLINED}
@@ -177,7 +178,7 @@ const ProfileTemplate: FC<IProps> = ({
                         <Grid container spacing={2} style={{marginTop:"15px !important",
                              width:"100%"}}>
                                 <Grid xs={12} md={10}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"email"}
                                     label={"Correo electrónico"}
                                     variant={TextFieldVariantEnum.OUTLINED}
@@ -187,7 +188,7 @@ const ProfileTemplate: FC<IProps> = ({
                                     typeText={TypeText.EMAIL} />
                                 </Grid>
                                 <Grid xs={12} md={10}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"phone"}
                                     label={"# de teléfono"}
                                     variant={TextFieldVariantEnum.OUTLINED}
@@ -196,7 +197,7 @@ const ProfileTemplate: FC<IProps> = ({
                                     style={textFieldStyle}/>
                                 </Grid>
                                 <Grid xs={12} md={10}>
-                                    <TextField
+                                    <TextField color={ColorEnum.SECONDARY}
                                     name={"country"}
                                     label={"País"}
                                     variant={TextFieldVariantEnum.OUTLINED}

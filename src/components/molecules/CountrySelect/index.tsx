@@ -2,6 +2,7 @@ import React, { FC } from "react";
 
 import { CountryType } from "@models";
 import {
+    ColorEnum,
     ImageLayoutEnum,
     StyleObject,
     TextFieldSizeEnum,
@@ -59,6 +60,7 @@ const Index: FC<IProps> = ({ countries, labelAutoComplete, style, size }) => {
             )}
             renderInput={(params) => (
                 <TextField
+                color={ColorEnum.PRIMARY}
                     {...params}
                     size={
                         params.size === "small"

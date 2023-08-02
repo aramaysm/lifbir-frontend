@@ -81,7 +81,7 @@ const WhoAreBanner: FC<Props> = ({
                                     sx={stylesTitlePrimary}
                                 >
                                     {titlePrimary}
-                                    <hr align="left" style={styleHR}/>
+                                    <hr  style={styleHR}/>
                                 </Typography>
                                 
                                 <Typography

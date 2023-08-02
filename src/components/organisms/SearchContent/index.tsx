@@ -10,7 +10,7 @@ import {
     stylesBoxSearch,
     stylesSearch,
     stylesBoxCurve,
-    stylesHR
+    stylesHR,
 } from "@components/organisms/SearchContent/styles";
 
 const tabs: TabItem[] = [
@@ -37,7 +37,7 @@ export default function Index() {
             <Box sx={stylesBoxText}>
                 <Typography gutterBottom variant="h5" component="div" sx={stylesText}>
                     {"Encuentre su "+text[value].label}                  
-                    <hr align="right" style={stylesHR}/>
+                    <hr  style={stylesHR}/>
                               
                 </Typography>
             </Box>

@@ -2,12 +2,11 @@ import React from "react";
 import Head from "next/head";
 
 import { CountryType } from "@models";
-import  Profile_Layout  from "@components/layouts/Layout/Account/profile";
 import profilePhoto from "@public/images/account/boy_small.png";
 import { GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import { dehydrate, QueryClient } from "react-query";
-import Account_Layout from "@components/layouts/Layout/Account";
+import {Account_Layout} from "@components";
 
 
 export const getStaticProps: GetStaticProps = async () => {

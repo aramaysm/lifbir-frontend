@@ -32,7 +32,6 @@ const Index: FC<IProps> = ({
     return (
         <Tabs
             value={value}
-            textColor={color}
             indicatorColor={indicatorColor}
             onChange={changeHandler}
             variant={variant}

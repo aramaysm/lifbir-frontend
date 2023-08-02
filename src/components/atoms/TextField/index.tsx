@@ -84,7 +84,6 @@ const Index: FC<IProps> = ({
             type={typeText}
             name={name}
             value={value}
-            color={color}
             onChange={onChange}
             multiline
             maxRows={rows}

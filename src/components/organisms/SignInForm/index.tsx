@@ -166,7 +166,7 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 fullWidth={true}
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={TypeText.EMAIL}
-                                color="secondary"
+                                color={ColorEnum.PRIMARY}
                             />
                         </Stack>
                         <Stack
@@ -179,7 +179,7 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 label={"Contraseña"}
                                 variant={TextFieldVariantEnum.OUTLINED}
                                 fullWidth={true}
-                                color="secondary"
+                                color={ColorEnum.PRIMARY}
                                 size={TextFieldSizeEnum.SMALL}
                                 typeText={showPassword ? TypeText.TEXT : TypeText.PASSWORD}
                                 adornment={adormentPassword}
