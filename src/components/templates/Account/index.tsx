@@ -19,7 +19,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LockIcon from "@mui/icons-material/Lock";
-import { CreditCard } from "@mui/icons-material";
+import  CreditCard  from "@mui/icons-material/CreditCard";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { cardsAccountOptions,arrayUrlsAccount } from "./load_data";
 import { useRouter } from "next/navigation";
