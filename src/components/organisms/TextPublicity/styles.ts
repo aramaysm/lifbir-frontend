@@ -22,7 +22,7 @@ export const stylesTextTitle = {
     fontSize: 18,
     fontStyle: "italic",
     paddingBottom: 1,
-    color:"white"
+    color:"white",
 };
 
 export const stylesButton = {
