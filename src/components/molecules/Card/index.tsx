@@ -78,7 +78,7 @@ const Index: FC<Props> = ({
         <Image
             alt={title}
             src={image}
-           layout={ImageLayoutEnum.FILL}
+            layout={ImageLayoutEnum.FILL}
             objectFit={ImageObjectFitEnum.CONTAIN}
             height={imageSize ? imageSize.height : null}
             width={imageSize ? imageSize.width : null}

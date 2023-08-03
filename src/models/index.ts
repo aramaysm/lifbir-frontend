@@ -51,4 +51,16 @@ export interface Agent_Dto {
     email:string;
     cant_reviews:number;
     photo: string | null;
+};
+
+export interface Sell_House_Dto {
+    id: number,
+    price: number,
+    city: string,
+    address : string,
+    bathrooms: number,
+    bedrooms: number,
+    sqft: number,
+    is_favorite: boolean,
+    photo: string,
 }

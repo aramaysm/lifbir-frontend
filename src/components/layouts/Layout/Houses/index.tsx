@@ -1,3 +1,4 @@
+
 import React, { FC, MouseEvent, SyntheticEvent, useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Tab from "@mui/material/Tab";
@@ -15,17 +16,18 @@ import {
 } from "@components";
 import { ColorEnum, TabItem } from "@components/types";
 
-import { Agent_Dto, CountryType } from "@models";
+import { CountryType, Sell_House_Dto } from "@models";
 import ProfileTemplate from "@components/templates/Account/profile";
 import AgentsTemplate from "@components/templates/Agents";
-import AgentsDataTemplate from "@components/templates/Agents/agent_data";
+import SellTemplate from "@components/templates/Houses/Sells";
 
 interface Props {
-    agent: Agent_Dto;
-    user:object;
+    countriesList: readonly CountryType[];
+    houses: any[];
+
 }
 
- const Agents_Data_Layout: FC<Props> = ({ user, agent }) => {
+ const Houses_Layout: FC<Props> = ({ houses,countriesList }) => {
     const [signinOpen, setSigninOpen] = useState(false);
     const [enterAnchorEl, setEnterAnchorEl] = useState<null | HTMLElement>(null);
     const [serverErrors, setServerErrors] = useState<{
@@ -77,12 +79,13 @@ interface Props {
                 handleEnterMenuOpen={enterMenuOpenHandler}
                 handleEnterMenuClose={handleEnterMenuClose}
             />
-            <Box sx={{padding: {xs:1, md:5} , paddingTop: {xs:5, md:10}}} component="main" justifyContent="center" >
-                <AgentsDataTemplate user={user} agentData={agent}  />
+            <Box sx={{padding: {xs:1, md:10}}} component="main" justifyContent="center" >
+                <SellTemplate  sells={houses} />
             </Box>
            
         </>
     );
 };
 
-export default Agents_Data_Layout;
+export default Houses_Layout;
+

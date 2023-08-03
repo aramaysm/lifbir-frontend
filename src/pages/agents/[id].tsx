@@ -25,7 +25,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     if (!foundItem) {
       return {
         props: { 
-            hasError: true },
+            hasError: true,
+            agent:{
+              id: "0",
+        fullname: "",
+        company_name: "",
+        phone:"",
+        email: "",    
+        cant_reviews: 0,
+        photo: null,
+            },
+          },
       }
   }
   
@@ -59,7 +69,10 @@ export default function Agent_Data({agent}:Params) {
             <Head>
                 <title>LIFVIR</title>
             </Head>
-            <Agents_Data_Layout agent={agent} user={{}} />
+            <Agents_Data_Layout agent={agent} user={{
+               username:"Morales",
+                name:"Onel",
+            }} />
         </>
     );
 }

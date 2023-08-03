@@ -133,7 +133,7 @@ export const agents:Agent_Dto[] = [
         phone:"25555555",
         email: "omara@gmail.com",    
         cant_reviews: 40,
-         photo: null,
+        photo: null,
     },
 ];
 

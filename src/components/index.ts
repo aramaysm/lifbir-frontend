@@ -18,6 +18,7 @@ import CheckBox from "@components/atoms/CheckBox";
 import CardActions from "@components/molecules/Card/CardActions";
 import CardContent from "@components/molecules/Card/CardContent";
 import Card from "@components/molecules/Card";
+import Card_Sell_House from "@components/molecules/Card/Card_Sell_House";
 import ConnectThrough from "@components/molecules/ConnectThrough";
 import CountrySelect from "@components/molecules/CountrySelect";
 import DialogActions from "@components/molecules/Dialog/DialogActions";
@@ -77,6 +78,7 @@ export {
     CardContent,
     Card,
     CardAgent,
+    Card_Sell_House,
     ConnectThrough,
     CountrySelect,
     CustomToolBarTable,
