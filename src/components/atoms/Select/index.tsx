@@ -36,6 +36,7 @@ interface IProps {
     name?: string;
     items: readonly any[];
     helperText?: string;
+    onChange: (id:number | string) => void;
 }
 
 const Index: FC<IProps> = ({
@@ -53,12 +54,14 @@ const Index: FC<IProps> = ({
     name,
     items,
     helperText,
+    onChange,
 }) => {
 
     const [value, setValue] = React.useState('');
 
   const handleChange = (event: SelectChangeEvent) => {
     setValue(event.target.value);
+    onChange(event.target.value);
   };
     const inputComponentProps: MuiInputProps = InputProps
         ? { ...InputProps }
@@ -89,7 +92,7 @@ const Index: FC<IProps> = ({
         >
           {
             items.map((item:any) => 
-                <MenuItem key={item.id} value={item.label}>{item.label}</MenuItem>  
+                <MenuItem key={item.id} value={item.value}>{item.label}</MenuItem>  
            )}          
         </Select>
         <FormHelperText>{helperText}</FormHelperText>

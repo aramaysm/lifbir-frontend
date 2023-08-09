@@ -64,3 +64,17 @@ export interface Sell_House_Dto {
     is_favorite: boolean,
     photo: string,
 }
+export interface Rent_House_Dto {
+    id: number,
+    price: number,
+    city: string,
+    address : string,
+    bathrooms: number,
+    bedrooms: number,
+    sqft: number,
+    is_favorite: boolean,
+    photo: string,
+    start_available?: Date,
+    end_available?: Date,
+
+}

@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     return {
         props: {
-            sells: [
+            barters: [
               {
                 id: 1,
                 price: 10000,
@@ -195,12 +195,12 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 
-interface ParamsSells {
-    sells: Sell_House_Dto[];
+interface ParamsBarters {
+    barters: Sell_House_Dto[];
 }
 
 
-export default function Sells({ sells }: ParamsSells) {
+export default function Barters({ barters }: ParamsBarters) {
     
     const listCountry: readonly CountryType[] = [
         {
@@ -278,11 +278,11 @@ export default function Sells({ sells }: ParamsSells) {
     return (
         <>
             <Head>
-                <title>LIFBIR | Ventas</title>
+                <title>LIFBIR | Permutas</title>
             </Head>
             <Houses_Layout 
-                type="Sell"
-                houses={sells}    
+                type="Barter"
+                houses={barters}    
                 countriesList={listCountry}
             />
         </>

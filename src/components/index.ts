@@ -54,7 +54,9 @@ import Profile_Layout from "./layouts/Layout/Account/profile";
 import Preferences_Layout from "./layouts/Layout/Account/preferencies";
 import Security_Layout from "./layouts/Layout/Account/security";
 import SocialNetworks_Layout from "./layouts/Layout/Account/social_networks";
-import Notifications_Layout from "./layouts/Layout/Account/notifications"
+import Notifications_Layout from "./layouts/Layout/Account/notifications";
+import Select from "@components/atoms/Select";
+import FilterHouse from "@components/organisms/Filter_Houses";
 
 export {
     AutoComplete,
@@ -114,4 +116,6 @@ export {
     Security_Layout, 
     SocialNetworks_Layout,
     Notifications_Layout,
+    Select,
+    FilterHouse,
 }

@@ -24,10 +24,11 @@ import SellTemplate from "@components/templates/Houses/Sells";
 interface Props {
     countriesList: readonly CountryType[];
     houses: any[];
+    type: string;
 
 }
 
- const Houses_Layout: FC<Props> = ({ houses,countriesList }) => {
+ const Houses_Layout: FC<Props> = ({ houses,countriesList,type }) => {
     const [signinOpen, setSigninOpen] = useState(false);
     const [enterAnchorEl, setEnterAnchorEl] = useState<null | HTMLElement>(null);
     const [serverErrors, setServerErrors] = useState<{
@@ -80,7 +81,15 @@ interface Props {
                 handleEnterMenuClose={handleEnterMenuClose}
             />
             <Box sx={{padding: {xs:1, md:10}}} component="main" justifyContent="center" >
-                <SellTemplate  sells={houses} />
+                { type === "Rent"
+                  ?
+                  <SellTemplate  sells={houses} />
+                  : type === "Sell" 
+                    ?
+                    <SellTemplate  sells={houses} />
+                    :
+                    <SellTemplate  sells={houses} />
+                }
             </Box>
            
         </>

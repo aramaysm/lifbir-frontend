@@ -59,6 +59,7 @@ const Index: FC<Props> = ({
         height,
         image,
         positionButton,
+        handlerButtom,
         bgColor,
         displayCard,
         styleTitle,
@@ -95,7 +96,7 @@ const Index: FC<Props> = ({
                 verticalPosition={PositionEnum.CENTER}
             >
                 <Grid md={imagePositionRight ? 4 : 12}>
-                    <Button
+                    <Button clickHandler={handlerButtom}
                         size={ButtonSizeEnum.LARGE}
                         variant={ButtonVariantEnum.OUTLINED}
                         label={textButton}
@@ -112,7 +113,7 @@ const Index: FC<Props> = ({
                 verticalPosition={PositionEnum.CENTER}
             >
                 <Grid md={imagePositionRight ? 4 : 12}>
-                    <Button
+                    <Button clickHandler={handlerButtom}
                         size={ButtonSizeEnum.LARGE}
                         variant={ButtonVariantEnum.OUTLINED}
                         label={textButton}

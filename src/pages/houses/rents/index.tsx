@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import { CountryType, Sell_House_Dto } from "@models";
+import { CountryType, Rent_House_Dto } from "@models";
 import { GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import { dehydrate, QueryClient } from "react-query";
@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     return {
         props: {
-            sells: [
+            rents: [
               {
                 id: 1,
                 price: 10000,
@@ -24,7 +24,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 1,
                 bedrooms: 3,
                 sqft: 25.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available:  Date.now(),
               },
               {
                 id: 2,
@@ -34,7 +36,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 2,
                 bedrooms: 5,
                 sqft: 5835.4,
-                photo:"https://pixabay.com/get/g4c5db966f356a1242a7abc7dce4d640cb3e69a143b72c55928d5ae341aaf2781ce017b6bc8f720db841d1bf70f941fcfa3abc70b4fda894081bcc1c91a3ac6bc_1280.jpg",
+                photo:"https://pixabay.com/get/g4c5db966f356a1242a7abc7dce4d640cb3e69a143b72c55928d5ae341aaf2781ce017b6bc8f720db841d1bf70f941fcfa3abc70b4fda894081bcc1c91a3ac6bc_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 3,
@@ -44,7 +48,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 1,
                 bedrooms: 4,
                 sqft: 305.4,
-                photo:"https://pixabay.com/get/g4c5db966f356a1242a7abc7dce4d640cb3e69a143b72c55928d5ae341aaf2781ce017b6bc8f720db841d1bf70f941fcfa3abc70b4fda894081bcc1c91a3ac6bc_1280.jpg",
+                photo:"https://pixabay.com/get/g4c5db966f356a1242a7abc7dce4d640cb3e69a143b72c55928d5ae341aaf2781ce017b6bc8f720db841d1bf70f941fcfa3abc70b4fda894081bcc1c91a3ac6bc_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
               {
                 id: 4,
@@ -54,7 +60,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 5,
@@ -64,7 +72,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 6,
@@ -74,7 +84,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g8031078ac562a6cda34622d76411e8298a848a13a0a9170c8666a0829b05e5caf27ad7b36f7fb0290bbe1e3c6b02b8bd4b9a3c916a1ed0366c84eabbaae1ee18_1280.jpg",
+                photo:"https://pixabay.com/get/g8031078ac562a6cda34622d76411e8298a848a13a0a9170c8666a0829b05e5caf27ad7b36f7fb0290bbe1e3c6b02b8bd4b9a3c916a1ed0366c84eabbaae1ee18_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 7,
@@ -84,7 +96,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 8,
@@ -94,7 +108,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 9,
@@ -104,7 +120,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
               {
                 id: 10,
@@ -114,7 +132,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
               {
                 id: 11,
@@ -124,7 +144,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 12,
@@ -134,7 +156,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
                {
                 id: 13,
@@ -144,7 +168,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
 
             {
@@ -155,7 +181,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
               {
                 id: 15,
@@ -165,7 +193,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
               {
                 id: 16,
@@ -175,7 +205,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
               {
                 id: 17,
@@ -185,7 +217,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 bathrooms: 7,
                 bedrooms: 3,
                 sqft: 455.25,
-                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",
+                photo:"https://pixabay.com/get/g2362c35c6e5ddcee9bdbb966375258e599ed603a079779a58a45c1b88ebe81e575b4f731bdf06bc143b80de40cd8596254057fb9d9234550604ea06a272c2b89_1280.jpg",  
+                start_available: Date.now(),
+                end_available: Date.now(),
               },
             ],
             dehydratedState: dehydrate(queryClient),
@@ -195,12 +229,12 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 
-interface ParamsSells {
-    sells: Sell_House_Dto[];
+interface ParamsRents {
+    rents: Rent_House_Dto[];
 }
 
 
-export default function Sells({ sells }: ParamsSells) {
+export default function Rents({ rents }: ParamsRents) {
     
     const listCountry: readonly CountryType[] = [
         {
@@ -278,11 +312,11 @@ export default function Sells({ sells }: ParamsSells) {
     return (
         <>
             <Head>
-                <title>LIFBIR | Ventas</title>
+                <title>LIFBIR | Houses</title>
             </Head>
             <Houses_Layout 
-                type="Sell"
-                houses={sells}    
+                type="Rent"
+                houses={rents}    
                 countriesList={listCountry}
             />
         </>

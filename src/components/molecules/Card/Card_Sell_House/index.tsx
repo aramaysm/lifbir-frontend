@@ -13,12 +13,14 @@ import { BoxImageStyle, ImageStyle, GridPather_CardStyle } from "./styles";
 import HotelIcon from '@mui/icons-material/Hotel';
 import BathtubIcon from '@mui/icons-material/Bathtub';
 import SquareFootIcon from '@mui/icons-material/SquareFoot';
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 interface IProps {
+    id: number;
     type: string;   //For rent, sale or buy
-    price: number;
+    price?: number;
     bedrooms: number;    
     bathrooms: number;
     sqft: number;
@@ -26,9 +28,13 @@ interface IProps {
     address: string;
     city: string;
     is_favorite: boolean;
+    onChangeFavorite: (id:number) => void;
+    start_available?: Date;
+    end_available?: Date;
 }
 
-const Index:React.FC<IProps> = ({type, price, bedrooms, bathrooms, sqft, photo, address, city, is_favorite }) => {
+const Index:React.FC<IProps> = ({id, type, price, bedrooms, bathrooms, sqft, photo,
+   address, city, is_favorite,onChangeFavorite, start_available,end_available }) => {
 
 
     return (
@@ -45,11 +51,38 @@ const Index:React.FC<IProps> = ({type, price, bedrooms, bathrooms, sqft, photo, 
                     />
                 </Box>
             </Grid>
-            
-            <Grid xs={12} md={12}>
-                 <Typography variant="h5" style={{fontWeight:"bold"}}
-                  color="text">{"$"+price}</Typography>
+            {
+              price 
+              ?
+                <Grid container direction={DirectionEnum.ROW} xs={12} md={12}>
+                  <Grid xs={10} md={10}  >
+                    <Typography variant="h5" style={{fontWeight:"bold"}}
+                                color="text">{"$"+price}</Typography>
+                  </Grid>
+                 
+                  <Grid xs={2} md={2}>
+                    {
+                    is_favorite ?
+                    <FavoriteIcon onClick={() => onChangeFavorite(id)} color="error" />
+                    :
+                    <FavoriteBorderIcon onClick={() => onChangeFavorite(id)} />
+                    }
+                  </Grid>
+                  
             </Grid>
+              :
+              <Grid xs={12} md={12}>
+                 {
+                    is_favorite ?
+                   
+                    <FavoriteIcon onClick={() => onChangeFavorite(id)} color="error" />
+                    :
+                    <FavoriteBorderIcon  onClick={() => onChangeFavorite(id)} />
+                  }
+              </Grid>
+
+            }
+            
             <Grid xs={12} md={12}>
                  <Typography variant="h6" style={{fontWeight:"bold"}}
                   color="text">{address}</Typography>
@@ -58,6 +91,20 @@ const Index:React.FC<IProps> = ({type, price, bedrooms, bathrooms, sqft, photo, 
                 <Typography variant="body2" 
                   color="greyText">{city}</Typography>
             </Grid>
+            { start_available 
+              ?
+              <Grid xs={12} md={12}>
+                <Typography variant="body2" 
+                  color="greyText">{`${(new Date(start_available)).getDate() } /
+                   ${(new Date(start_available)).getMonth()} / ${(new Date(start_available)).getFullYear()} - 
+                   ${(new Date(end_available)).getDate() } /
+                   ${(new Date(end_available)).getMonth()} / ${(new Date(end_available)).getFullYear()}`}</Typography>
+              </Grid>
+              :
+              <Grid xs={12} md={12}>
+                
+              </Grid>
+            }
             <Grid xs={12} md={12}>
                 <Divider></Divider>
             </Grid>

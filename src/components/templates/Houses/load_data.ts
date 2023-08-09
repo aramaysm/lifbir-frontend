@@ -14,4 +14,38 @@ export const PrecioSelect = [
        label:"$4000 - $6000",
        value: 3,        
     },
-]
+];
+export const FilterHousesSelect = [
+    {
+       id: 1,
+       label:"Venta",
+       value: "sells",        
+    },
+    {
+       id: 2,
+       label:"Renta",
+       value: "rents",        
+    },
+    {
+       id: 3,
+       label:"Permuta",
+       value: "barters",        
+    },
+];
+export const TypePropertyHousesSelect = [
+    {
+       id: 1,
+       label:"Venta",
+       value: 1,        
+    },
+    {
+       id: 2,
+       label:"Renta",
+       value: 2,        
+    },
+    {
+       id: 3,
+       label:"Permuta",
+       value: 3,        
+    },
+];

@@ -1,5 +1,5 @@
 export const BoxImageStyle = {
-    borderRadius:"10px",
+    borderRadius:"10px !important",
     height:'170px',
     width:'100% ',
     margin:"auto",

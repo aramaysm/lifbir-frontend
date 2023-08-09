@@ -14,12 +14,16 @@ import {
     TextPublicity,
     Typography,
 } from "@components";
+import { useRouter } from 'next/navigation';
 import { cardsServices} from "@components/templates/Home/load_data";
 import { DirectionEnum, PositionEnum, TabItem } from "@components/types";
 import * as styles_Home from "@components/templates/Home/styles";
 
 
 export const Banner_Services = () => {
+
+    const router = useRouter();
+
     return (
         <Stack style={{ padding: 2,marginTop:"25px" }}>
         <Grid
@@ -58,7 +62,8 @@ export const Banner_Services = () => {
                                 paddingLeft: "16px !important",
                                 paddingRight: "16px !important",
                            }} >
-                            <Card buttonBordered={true}
+                            <Card handlerButtom={() => router.push(item.link)}
+                                buttonBordered={true}
                                 title={item.title}
                                 content={item.content}
                                 textButton={item.textButton}

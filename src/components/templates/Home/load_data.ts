@@ -7,21 +7,24 @@ export   const cardsServices = (
             content:"LIFBIR les ayuda a encontrar de mandera facil la casa que busca. " +
             "Podra comunicarse directamente con los dueños",
             textButton:"Encuentra Casas",           
-            image:images[0],           
+            image:images[0], 
+            link:"houses/sells",    
         },
         {
             title:"Permutar de casa",
             content:"LIFBIR les ayuda a encontrar de mandera facil la casa que busca. " +
             "Podra comunicarse directamente con los dueños",
             textButton:"Encuentra permuta",           
-            image:images[1],           
+            image:images[1],    
+            link:"houses/sells",       
         },
         {
             title:"Rentar una casa",
             content:"LIFBIR les ayuda a encontrar de mandera facil la casa que busca. " +
             "Podra comunicarse directamente con los dueños",
             textButton:"Encuentra alquiler",           
-            image:images[2],           
+            image:images[2], 
+            link:"houses/rents",          
         },
         
     ];
