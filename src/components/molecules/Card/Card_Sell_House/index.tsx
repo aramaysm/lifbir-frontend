@@ -69,9 +69,10 @@ const Index:React.FC<IProps> = ({id, type, price, bedrooms, bathrooms, sqft, pho
                     }
                   </Grid>
                   
-            </Grid>
+                </Grid>
               :
-              <Grid xs={12} md={12}>
+            <Grid  xs={12} md={12}              
+              style={{ justifyContent: "end", display: "flex" }}>
                  {
                     is_favorite ?
                    

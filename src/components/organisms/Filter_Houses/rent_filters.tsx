@@ -15,7 +15,7 @@ interface IProps{
     onChangeRoomsAndBaths: (value:number) => void;
 }
 
-const Index: React.FC<IProps> = ({
+const RentFilters: React.FC<IProps> = ({
     onChangePrice,
     onChangeTypeProperty,
     onChangeRoomsAndBaths,
@@ -38,7 +38,7 @@ const Index: React.FC<IProps> = ({
                     horizontalPosition={PositionEnum.CENTER}
                     verticalPosition={PositionEnum.CENTER}
                     style={{width:"100%"}}>
-                                    <Grid xs={12} md={3}>
+                                    <Grid xs={12} md={2}>
                                         <Stack direction={DirectionEnum.COLUMN}>
                                             
                                             <Select label="Seleccionar"
@@ -50,7 +50,7 @@ const Index: React.FC<IProps> = ({
                                             
                                         </Stack>
                                     </Grid>
-                                    <Grid xs={12} md={3}>
+                                    <Grid xs={12} md={2}>
                                         <Stack direction={DirectionEnum.COLUMN}>
                                            
                                            <Select label="Precio"
@@ -62,7 +62,7 @@ const Index: React.FC<IProps> = ({
                                             
                                         </Stack>
                                     </Grid>
-                                    <Grid xs={12} md={3}>
+                                    <Grid xs={12} md={2}>
                                         <Stack direction={DirectionEnum.COLUMN}>
                         <Chip
                             sx={{
@@ -82,7 +82,7 @@ const Index: React.FC<IProps> = ({
                                                                 
                                         </Stack>
                                     </Grid>
-                                    <Grid xs={12} md={3}>
+                                    <Grid xs={12} md={2}>
                                         <Stack direction={DirectionEnum.COLUMN}>
                                             <Chip
                             sx={{
@@ -99,7 +99,44 @@ const Index: React.FC<IProps> = ({
                                 setOpenHousesTypeDialog(true);
                             }} />
                                                </Stack>
-                                    </Grid>
+                </Grid>
+                
+                <Grid xs={12} md={2}>
+                                        <Stack direction={DirectionEnum.COLUMN}>
+                                            <Chip
+                            sx={{
+                                                    height: "53px !important",
+                                                    fontSize:"16px !important",
+                                                    color:"grey",
+                                                     borderRadius:"3px !important",
+                            }}
+                            variant={"outlined"}
+                            label="Fechas"
+                            onClick={() =>
+                            {
+                                setFilterSelected('bathrooms');
+                                setOpenHousesTypeDialog(true);
+                            }} />
+                                               </Stack>
+                </Grid>
+                 <Grid xs={12} md={2}>
+                                        <Stack direction={DirectionEnum.COLUMN}>
+                                            <Chip
+                            sx={{
+                                                    height: "53px !important",
+                                                    fontSize:"16px !important",
+                                                    color:"grey",
+                                                     borderRadius:"3px !important",
+                            }}
+                            variant={"outlined"}
+                            label="Huespedes"
+                            onClick={() =>
+                            {
+                                setFilterSelected('bathrooms');
+                                setOpenHousesTypeDialog(true);
+                            }} />
+                                               </Stack>
+                </Grid>
             </Grid> 
             <DialogFilterHouse listOfChecks={listOfFilters[filterSelected]}
                 onCloseDialog={() => setOpenHousesTypeDialog(false)}
@@ -111,4 +148,4 @@ const Index: React.FC<IProps> = ({
     )
 }
 
-export default Index;
+export default RentFilters;

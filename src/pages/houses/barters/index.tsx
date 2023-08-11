@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
             barters: [
               {
                 id: 1,
-                price: 10000,
+               
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 1,
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
               },
               {
                 id: 2,
-                price: 20000,
+                
                 city: "Miami, FL",
                 address : "4na Avenida 1458",
                 bathrooms: 2,
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 3,
-                price: 30000,
+                
                 city: "Miami, FL",
                 address : "4na Avenida 1458",
                 bathrooms: 1,
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
               },
               {
                 id: 4,
-                price: 40000,
+                
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -58,7 +58,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 5,
-                price: 50700,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -68,7 +67,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 6,
-                price: 60000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -78,7 +76,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 7,
-                price: 70000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -88,7 +85,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 8,
-                price: 80000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -98,7 +94,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 9,
-                price: 90000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -108,7 +103,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
               {
                 id: 10,
-                price: 10000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -118,7 +112,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
               {
                 id: 11,
-                price: 11000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -128,7 +121,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 12,
-                price: 12000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -138,7 +130,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
                {
                 id: 13,
-                price: 13000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -149,7 +140,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
             {
                 id: 14,
-                price: 14000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -159,7 +149,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
               {
                 id: 15,
-                price: 15000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -169,7 +158,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
               {
                 id: 16,
-                price: 16000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,
@@ -179,7 +167,6 @@ export const getStaticProps: GetStaticProps = async () => {
               },
               {
                 id: 17,
-                price: 17000,
                 city: "Miami, FL",
                 address : "9na Avenida 1458",
                 bathrooms: 7,

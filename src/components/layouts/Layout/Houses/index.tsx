@@ -19,7 +19,7 @@ import { ColorEnum, TabItem } from "@components/types";
 import { CountryType, Sell_House_Dto } from "@models";
 import ProfileTemplate from "@components/templates/Account/profile";
 import AgentsTemplate from "@components/templates/Agents";
-import SellTemplate from "@components/templates/Houses/Sells";
+import HousesView from "@components/templates/Houses/Houses_View";
 
 interface Props {
     countriesList: readonly CountryType[];
@@ -81,15 +81,8 @@ interface Props {
                 handleEnterMenuClose={handleEnterMenuClose}
             />
             <Box sx={{padding: {xs:1, md:10}}} component="main" justifyContent="center" >
-                { type === "Rent"
-                  ?
-                  <SellTemplate  sells={houses} />
-                  : type === "Sell" 
-                    ?
-                    <SellTemplate  sells={houses} />
-                    :
-                    <SellTemplate  sells={houses} />
-                }
+                
+                <HousesView type={type} houses_list={houses} />
             </Box>
            
         </>

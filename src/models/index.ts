@@ -78,3 +78,9 @@ export interface Rent_House_Dto {
     end_available?: Date,
 
 }
+
+export interface CheckBoxItemGroup {
+    name: string;
+    label: string;
+    checked: boolean;
+}
