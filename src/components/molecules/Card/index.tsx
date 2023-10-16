@@ -182,8 +182,8 @@ const Index: FC<Props> = ({
                             {imageContent}
                         </Box>
                     </Grid>
-                    <Grid xs={12} md={7}>
-                    <CardContent>                       
+                    <Grid xs={12} md={12} style={{ padding: 0 }}>
+                    <CardContent >                       
                             <Grid 
                              direction={DirectionEnum.COLUMN}>
                                 <Grid style={{textAlign:"center"}}>
@@ -201,6 +201,7 @@ const Index: FC<Props> = ({
                                     variant="body1"
                                     color="text.secondary"
                                     sx={styleContent}
+                                    style={{textAlign:"center"}}
                                 >
                                     {content}
                                 </Typography>

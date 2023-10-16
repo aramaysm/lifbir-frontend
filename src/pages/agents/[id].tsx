@@ -11,7 +11,7 @@ import Agents_Layout from "@components/layouts/Layout/Agents";
 import { agents } from "@components/templates/Agents/load_data";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Agents_Data_Layout from "@components/layouts/Layout/Agents/agent_data";
-
+import { AuthProvider,ProtectRoute } from "@contexts/authcontext/AuthState";
 
 async function getData() {   
     return agents;
@@ -69,10 +69,15 @@ export default function Agent_Data({agent}:Params) {
             <Head>
                 <title>LIFVIR</title>
             </Head>
-            <Agents_Data_Layout agent={agent} user={{
-               username:"Morales",
-                name:"Onel",
-            }} />
+            <AuthProvider>
+             <ProtectRoute>
+                <Agents_Data_Layout agent={agent} user={{
+                  username:"Morales",
+                    name:"Onel",
+                }} />
+           
+            </ProtectRoute>
+          </AuthProvider>
         </>
     );
 }

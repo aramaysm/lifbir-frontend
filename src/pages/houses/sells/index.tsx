@@ -6,7 +6,7 @@ import { GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import { dehydrate, QueryClient } from "react-query";
 import Houses_Layout from "@components/layouts/Layout/Houses";
-
+import WithPrivateRoute from '@util/WithPrivateRoute'
 
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -288,3 +288,5 @@ export default function Sells({ sells }: ParamsSells) {
         </>
     );
 }
+
+Sells.Auth = WithPrivateRoute

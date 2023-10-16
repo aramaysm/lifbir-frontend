@@ -20,11 +20,13 @@
       "@components/*": ["./src/components/*"],
       "@components": ["./src/components"],
       "@models": ["./src/models"],
+      "@contexts": ["./src/contexts"],
+      "@contexts/*": ["./src/contexts/*"],
       "@styles/*": ["./src/styles/*"],
       "@util/*": ["./src/util/*"],
       "@public/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/contexts/authcontext/AuthState.js"],
   "exclude": ["node_modules"]
 }

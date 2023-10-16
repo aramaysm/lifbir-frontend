@@ -8,8 +8,10 @@
 }
 
  const stylesContentCenter = {
-    justifyContent:"center",
-    alignContent:"center",
+    display:"flex",
+    textAlign:"center !important",
+    justifyContent:"center !important",
+    alignContent:"center !important",
 };
 
  const stylesGridBanner1 = {

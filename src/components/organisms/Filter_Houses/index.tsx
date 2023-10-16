@@ -23,7 +23,7 @@ const Index: React.FC<IProps> = ({
 
     const router = useRouter();
     const [openHousesTypeDialog, setOpenHousesTypeDialog] = React.useState(false);
-    const listOfFilters = {
+    const listOfFilters:any = {
         bathrooms: listOfBathrooms,
         houseTypes: listOfTypeHouses,
     }
@@ -58,7 +58,7 @@ const Index: React.FC<IProps> = ({
                                                 fullWidth
                                                 placeholder="Seleccionar"
                                                 variant={TextFieldVariantEnum.OUTLINED}
-                                                onChange={(value) => {onChangePrice(value)}} />
+                                                onChange={(value) => {onChangePrice(Number(value))}} />
                                             
                                         </Stack>
                                     </Grid>

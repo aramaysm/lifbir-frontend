@@ -31,6 +31,7 @@ const Index: FC<IProps> = ({
 }) => {
     return (
         <Button
+            type="submit"
             disabled={disabled}
             color={color}
             size={size}

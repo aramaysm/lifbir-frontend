@@ -39,6 +39,9 @@ export const Banner_Services = () => {
                 style={{
                     paddingLeft: "16px !important",
                     paddingRight: "16px !important",
+                    textAlign:"center !important",
+                    justifyContent:"center !important",
+                    alignContent:"center !important",
                 }}
                 >
                     <Grid container direction={DirectionEnum.ROW} xs={5} md={3}
@@ -47,7 +50,7 @@ export const Banner_Services = () => {
                                 variant="h4" 
                                 sx={{fontWeight:"bold", color:"customGrey.primary"}} >
                                 Servicios
-                                <hr style={styles_Home.stylesHR}/>
+                                <hr align="left" style={styles_Home.stylesHR}/>
                         </Typography>
                     </Grid>
                     

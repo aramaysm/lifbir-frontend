@@ -30,7 +30,7 @@ interface IProps {
     is_favorite: boolean;
     onChangeFavorite: (id:number) => void;
     start_available?: Date;
-    end_available?: Date;
+    end_available: Date;
 }
 
 const Index:React.FC<IProps> = ({id, type, price, bedrooms, bathrooms, sqft, photo,

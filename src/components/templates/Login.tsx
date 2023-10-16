@@ -1,6 +1,6 @@
 
 /* eslint-disable react/jsx-key */
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import { CountryType } from "@models";
 import { Image, Stack, Grid, Box, Button, TextField, SignInForm, RegisterForm } from "@components";
 import { ButtonVariantEnum, DirectionEnum, ImageLayoutEnum,ImageObjectFitEnum, PositionEnum, TextFieldSizeEnum, TextFieldVariantEnum, TypeText } from "@components/types";
@@ -21,7 +21,7 @@ import  CreditCard  from "@mui/icons-material/CreditCard";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useRouter } from "next/navigation";
 import { StaticImageData } from "next/image";
-
+import {useAuth} from "@contexts/authcontext/AuthState";
 
 const iconsList = [
     <AccountBoxIcon sx={{fontSize:"100px", marginLeft:"auto", marginRight:"auto"}} color={"secondary"}/>, 
@@ -47,6 +47,9 @@ const Login_Template: FC<IProps> = ({
     isLogin,
 }) => {
 
+    
+    const {login} = useAuth();
+
     const imageContent = image ? (
         <Image
             src={image}
@@ -59,8 +62,22 @@ const Login_Template: FC<IProps> = ({
 
     const { push } = useRouter();
 
-    const handleClickCard = (index:number) => {
-        push("/account"+"/1");
+   
+    const handleSignIn = async(formData:any) => {
+        const { email, password } = formData;
+        const res = await login(email, password);
+        if (res) {
+           window.history.pushState(
+            `/`,
+            "auth-login",
+            `/`
+          );
+          window.location.reload();
+         
+        } else {
+          alert("Error")
+        }
+    
     }
 
     return (
@@ -82,8 +99,7 @@ const Login_Template: FC<IProps> = ({
             <Grid style={{alignItems:"center" }} >
                 {
                     isLogin ?
-                        <SignInForm  handleToggleSignIn={function (): void {
-                        throw new Error("Function not implemented.");}}/>
+                        <SignInForm  handleToggleSignIn={handleSignIn}/>
                     :
                         <RegisterForm serverErrors={null} countriesList={countriesList} />
                 }

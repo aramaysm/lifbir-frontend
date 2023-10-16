@@ -70,6 +70,10 @@ const Index: FC<IProps> = ({
             </InputAdornment>
         );
     }
+
+
+    console.log("Typetext in textfield-",typeText);
+
     return (
         <TextField
             label={label}

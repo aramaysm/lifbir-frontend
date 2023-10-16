@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import { dehydrate, QueryClient } from "react-query";
 import Login_Layout from "@components/layouts/Layout/Login";
+import {AuthProvider} from "@contexts/authcontext/AuthState"; 
 
 
 
@@ -42,16 +43,17 @@ export default function Login({ user }: ParamsLogin) {
     
   
     return (
-        <>
+        <AuthProvider>
             <Head>
                 <title>LIFBIR</title>
             </Head>
+            
             <Login_Layout 
                 isLogin
                 user={user}               
                 image={image}
                 
             />
-        </>
+        </AuthProvider>
     );
 }
