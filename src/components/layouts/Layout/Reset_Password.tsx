@@ -35,16 +35,14 @@ const iconsList = [
 interface IProps {
     user:any;
     image:string | StaticImageData;
-    countriesList: readonly CountryType[];  
-    isLogin: boolean; 
+    token:string
     
 }
 
-const Login_Template: FC<IProps> = ({
+const ResetPassword_Layout: FC<IProps> = ({
     user,
     image,
-    countriesList,
-    isLogin,
+    token,
 }) => {
 
     
@@ -61,6 +59,7 @@ const Login_Template: FC<IProps> = ({
     ) : null;
 
     const { push } = useRouter();
+    
 
    
     const handleSignIn = async(formData:any) => {
@@ -85,24 +84,12 @@ const Login_Template: FC<IProps> = ({
      
       <Grid container style={{ height: '100vh' }}>
         <CssBaseline />
-        <Grid
-          xs={0}
-          sm={6}
-          md={7}
-          
-        >
-           <Box sx={{ height: {xs:"0", sm:"100vh", md:"100vh"} }} position={"relative"}>
-                {imageContent}
-           </Box>
-
-        </Grid>
+       
         <Grid  xs={12} sm={6} md={5} >
             <Grid style={{alignItems:"center" }} >
                 {
-                    isLogin ?
-                        <SignInForm  handleToggleSignIn={handleSignIn}/>
-                    :
-                        <RegisterForm serverErrors={null} countriesList={countriesList} />
+                   
+                    <RegisterForm serverErrors={null} countriesList={[]} />
                 }
             </Grid>
         
@@ -113,7 +100,7 @@ const Login_Template: FC<IProps> = ({
     )
 }
 
-export default Login_Template;
+export default ResetPassword_Layout;
 
 
 /*

@@ -89,7 +89,7 @@ const Index: FC<IProps> = ({
             name={name}
             value={value}
             onChange={onChange}
-            multiline
+            multiline={typeText === TypeText.TEXT ? true : false}
             maxRows={rows}
         />
     );
@@ -99,7 +99,6 @@ Index.defaultProps = {
     variant: TextFieldVariantEnum.STANDARD,
     disabled: false,
     fullWidth: false,
-    typeText: TypeText.TEXT,
     size: TextFieldSizeEnum.MEDIUM,
 };
 

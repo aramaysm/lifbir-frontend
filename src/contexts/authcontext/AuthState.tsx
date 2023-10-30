@@ -94,6 +94,32 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
+    const forgot_password = async (email:string) => {
+      const config = {
+        withCredentials: true,      
+      };
+
+      try {
+        const res = await axios.post(`${BASE_URL}auth/forgot`, {
+          email,
+        }, config);
+
+        if (res.status === 201) {
+          return res;
+        } else {
+          return false;
+        }
+      } catch (error:any) {
+        console.log("Errrors ", error);
+        return {
+          errorMsg:  error.response.data.errors ? error.response.data.errors[0]?.message : error.response.data,
+          errorStatus: error.response.status,
+        };
+      }
+
+     
+  }
+
    const logout = () => {
         //Cookies.remove('token')
         setUser({});
@@ -105,7 +131,7 @@ export const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, user, login, loading, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated, user, login,forgot_password, loading, logout }}>
             {children}
         </AuthContext.Provider>
     )

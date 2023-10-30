@@ -35,13 +35,15 @@ import {
     stylesStack,
     stylesTypography,
 } from "@components/organisms/SignInForm/styles";
+import Alert from '@mui/material/Alert';
 import { SignInInitialValues } from "@components/organisms/SignInForm/config";
 import { Divider,Button } from "@mui/material";
-import imageLogo from "@public/images/LOGO_UNIDO_pink.svg";
+import imageLogo from "@public/images/account/undraw_forgot_password_re_hxwm.svg";
 
 
 interface IProps {
     handleToggleSignIn: (formData:any) => void;
+    serverErrors: string|null;
 }
 
 const signInInitialValues: FormikValues = {
@@ -54,13 +56,11 @@ const signInValidationSchema = object().shape({
     password: string().required("val_required").min(8, "val_min_value"),
 });
 
-const Index: FC<IProps> = ({ handleToggleSignIn }) => {
+const Index: FC<IProps> = ({ handleToggleSignIn, serverErrors }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [changePassOpen, setChangePassOpen] = useState(false);
     const [checkedRemember, setCheckedRemember ] = useState(true);
-    const [serverErrors, setServerErrors] = useState<{
-        [p: string]: ArrayLike<unknown>;
-    } | null>(null);
+    
 
     const [formData, setFormData]= useState({
         email:"",
@@ -72,7 +72,7 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
     const showServerHandlerErrors = (
         error: { [p: string]: ArrayLike<unknown> } | null
     ) => {
-        setServerErrors(error);
+        //setServerErrors(error);
     };
 
     const passwordToggleHandler = () => {
@@ -118,6 +118,7 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
         console.log("Values: ",values);
         console.log(actions);
     };*/
+    
     const handlerSignInSubmit = ( ev:any) => {
         console.log("Values: ",formData);
         ev.preventDefault();
@@ -140,22 +141,21 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                 actions: FormikHelpers<typeof SignInInitialValues>
             ) => {
                
-            }}
-        >
+            }}>
            
-                <Form style={{ width:"100%"}} onSubmit={(ev)=>{
+                <Form style={{ width:"100%"}} onSubmit={(ev) => {
                     ev.preventDefault()
-                    handlerSignInSubmit(ev);
-                    }}>
-                    <Box  sx={{ padding: 3}} component="form">
+                    handlerSignInSubmit(ev);}}>
+                    <Box sx={{ padding: 3, border:"1px solid #d9dbdc", borderRadius:"10px"}} component="form">
                         {serverErrors && (
-                            <FormHelperText error focused style={{ maxWidth: 280, mb: 3 }}>
-                                <>{serverErrors}</>
-                            </FormHelperText>
+                             <Alert severity="error">
+                               {serverErrors}
+                            </Alert>
+                            
                         )}
                      
-                        <Grid  xs={12} md={12} style={{ padding: 1 }}>
-                           <Box sx={{ height: "70px" }} position={"relative"}>
+                        <Grid xs={12} md={12} style={{ padding: 1 }}>
+                           <Box sx={{ height: "150px", marginBottom: 3 }} position={"relative"}>
                               <Image
                                 src={imageLogo}
                                 alt={"Image Login"}
@@ -181,43 +181,9 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 color={ColorEnum.PRIMARY}
                                 onChange={onChangeInput}
                             />
-                        </Stack>
-                        <Stack
-                            direction={DirectionEnum.COLUMN}
-                            spacing={2}
-                            style={stylesStack}
-                        >
-                            <TextField
-                                name={"password"}
-                                label={"Contraseña"}
-                                variant={TextFieldVariantEnum.OUTLINED}
-                                fullWidth={true}
-                                color={ColorEnum.PRIMARY}
-                                size={TextFieldSizeEnum.SMALL}
-                                typeText={showPassword ? TypeText.TEXT : TypeText.PASSWORD}
-                                adornment={adormentPassword}                                
-                                onChange={onChangeInput}
-                                value={formData.password}
-                            />
-                        </Stack>
-                         <Stack
-                            direction={DirectionEnum.COLUMN}
-                            spacing={2}
-                            verticalPosition={PositionEnum.END}                          
-                        >
-                            <Link
-                                href="/forgot-password"
-                                style={stylesTypography}
-                            >
-                                ¿Olvidó su contraseña?
-                            </Link>
-                        </Stack>
-                        <Stack
-                            direction={DirectionEnum.COLUMN}
-                            spacing={2}>
-                            <CheckBox label="Recuerdame" checked={checkedRemember} onChange={()=>setCheckedRemember(!checkedRemember)} />
                         </Stack>                        
-                        <Grid container xs={12} md={12} style={{ padding: 2 }}
+                                                
+                        <Grid container xs={12} md={12} style={{ padding: 2, marginTop: 3 }}
                         >
                             <Grid xs={12} md={12}>
                                 <Button
@@ -226,22 +192,16 @@ const Index: FC<IProps> = ({ handleToggleSignIn }) => {
                                 sx={stylesButton}
                                 onClick={handlerSignInSubmit}
                             >
-                              Iniciar sesión  
+                              Recuperar contraseña  
                             </Button>
                             </Grid>
                             <Grid style={{textAlign:"center", marginTop: 2}} xs={12} md={12}>
-                                 <Link href={"/registro"}>
-                                   ¿Aún no tiene cuenta?
+                                 <Link href={"/iniciar_sesion"}>
+                                   Regresar a iniciar sesión
                                 </Link>
                             </Grid>
                             
-                        </Grid>
-                        
-                        <Grid style={{width:"100%", marginTop: 2}} >
-                            <Divider>Ó</Divider>
-                          <ConnectThrough linksToSocialMedia={{facebook:"https://www.facebook.com",
-                           google:"https://www.google.com"}} />
-                        </Grid>
+                        </Grid>                        
                        
                     </Box>
                 </Form>
